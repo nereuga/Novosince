@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Aplicação Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer ></script>
+</head>
+<body>
+    <div class="container">
+        <!-- DIV Superior (Cabeçalho) -->
+        <div class="header">
+            <h1>SINCE - Levantamento de Funcionalidades</h1>
+        </div>
+        
+        <div class="main-content">
+            <!-- DIV Esquerda (Menu em Árvore) -->
+            <div class="sidebar">
+                <ul class="tree-menu">
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Fases do processo...</span>
+                        <ul class="submenu">
+                            <li>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Pre-Embarque...</span>
+                                <ul class="submenu">
+                                    <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
+                                    <li><a href="#" onclick="loadContent('pre_embarque.html')">Atributos Pré embarque</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Embarque...</span>
+                                <ul class="submenu">
+                                    <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
+                                    <li><a href="#" onclick="loadContent('Embarque.html')">Atributos Embarque</a></li>
+                                    <li><a href="#" onclick="loadContent('Carga.html')">Dados Carga</a></li>
+                                    <li><a href="#" onclick="loadContent('Invoice.html')">Gestão da Invoice</a></li>
+                                    <li><a href="https://hduimp.databras.com.br/" target="_blank">Gestão de Catálogo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Desembaraço...</span>
+                                <ul class="submenu">
+                                    <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
+                                    <li><a href="#" onclick="loadContent('Forecast.html')">Forecast</a></li>
+                                    <li><a href="#" onclick="loadContent('Duimp.html')">DUIMP</a></li>
+                                    <li><a href="#" onclick="loadContent('SefazIcms.html')">Cálculo SEFAZ ICMS</a></li>
+                                    <li><a href="#" onclick="loadContent('NFentrada.html')">NF Entrada</a></li>
+                                    <li><a href="#" onclick="loadContent('Padim.html')">Recuperação DUIMP</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Gestão Financeira...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Financeiro.html')">Sub Menu</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Consultas e Dashboards</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Dashboards.html')">Sub Menu</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Parametrizações...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Fases.html')">Fases do Processo</a></li>
+                            <li><a href="#" onclick="loadContent('Eventos.html')">Eventos de fases</a></li>
+                            <li><a href="#" onclick="loadContent('Atributos.html')">Atributos de processos</a></li>
+                            <li><a href="#" onclick="loadContent('KPIs.html')">KPIs</a></li>
+                            <li><a href="#" onclick="loadContent('Atores.html')">Atores</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Painel de Interfaces...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('PainelInterfaces.html')">Sub Menu</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Favoritos...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Favoritos.html')">Sub Menu</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Últimos acessos...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Ultimoacesso.html')">Sub Menu</a></li>
+                       </ul>
+                    </li>
+                   
+                </ul>
+            </div>
+            
+            <!-- DIV Central (Conteúdo) -->
+            <div class="content" id="mainContent">
+                <div class="welcome-message">
+                    <h2>Bem-vindo ao SINCE</h2>
+                    <p>Selecione uma opção no menu à esquerda.</p>
+                </div>
+                <div id="pictureButtonsContainer" class="picture-buttons-container" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+    <script>// Coloque este script na página principal (index.html)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab')) {
+                // Remove a classe active de todas as abas e conteúdos
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Adiciona a classe active à aba clicada
+                e.target.classList.add('active');
+                
+                // Mostra o conteúdo correspondente
+                const tabId = e.target.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            }
+        });
+       
+
+    </script>
+   
+</body>
+</html>

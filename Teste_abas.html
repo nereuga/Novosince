@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema com Abas</title>
+    <style>
+        /* Estilos das abas */
+        .tabs {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .tab {
+            position: relative;
+            padding: 12px 20px;
+            margin-right: 5px;
+            background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+            z-index: 1;
+            transition: all 0.2s ease;
+        }
+        
+        .tab:hover {
+            background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
+        }
+        
+        .tab.active {
+            background: #fff;
+            color: #333;
+            z-index: 3;
+            box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0 5px 5px 5px;
+            background: #fff;
+            box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Efeito 3D opcional */
+        .tab.active:before, .tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+        }
+        
+        .tab.active:before {
+            left: -6px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 0 0 0 #fff;
+        }
+        
+        .tab.active:after {
+            right: -6px;
+            border-bottom-left-radius: 5px;
+            box-shadow: -3px 0 0 0 #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <ul class="tabs">
+            <li class="tab active" data-tab="tab1">Lista</li>
+            <li class="tab" data-tab="tab2">Atributos</li>
+            <li class="tab" data-tab="tab3">Eventos</li>
+            <li class="tab" data-tab="tab4">Processos Envolvidos</li>
+        </ul>
+        
+        <div id="tab1" class="tab-content active">
+            <h2>Conteúdo da da Lista</h2>
+            <p>Este é o conteúdo da Lista.</p>
+        </div>
+        
+        <div id="tab2" class="tab-content">
+            <h2>Conteúdo de atributos</h2>
+            <p>Este é o conteúdo de atributos.</p>
+        </div>
+        
+        <div id="tab3" class="tab-content">
+            <h2>Conteúdo dos Eventos</h2>
+            <p>Este é o conteúdo dos eventos.</p>
+        </div>
+        <div id="tab4" class="tab-content">
+            <h2>Conteúdo do envolvimento</h2>
+            <p>Este é o conteúdo ddos envolvimentos.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove a classe active de todas as abas e conteúdos
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Adiciona a classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostra o conteúdo correspondente
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
