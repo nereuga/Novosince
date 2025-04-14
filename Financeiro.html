@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVOICE</title>
+    <title>FINANCEIRO</title>
    
     <style>
         /* Estilos das abas */
@@ -172,13 +172,13 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('EMBARQUE','INVOICE','CONSULTA')">Consulta</li>
-            <li class="tab" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','INVOICE','ATRIBUTOS')">Atributos</li>
-            <li class="tab" data-tab="tab3"  onclick="loadJsonData('EMBARQUE','INVOICE','ITEM')">Detalhe item</li>
-            <li class="tab" data-tab="tab4"  onclick="loadJsonData('EMBARQUE','INVOICE','PROC-ENV')">Processos Envolvidos</li>
-            <li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','INVOICE','CAMBIAL')">Cambial</li>
-            <li class="tab" data-tab="tab6"  onclick="loadJsonData('EMBARQUE','INVOICE','EMBALAGEM')">Embalagem</li>
-            <li class="tab" data-tab="tab7"  onclick="loadJsonData('EMBARQUE','INVOICE','IMPRESSAO')">Impressão</li>
+            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','CONSULTA')">Consulta</li>
+            <li class="tab" data-tab="tab2"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','ATRIBUTOS')">Atributos</li>
+            <li class="tab" data-tab="tab3"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','ITEM')">Detalhe item</li>
+            <li class="tab" data-tab="tab4"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','PROC-ENV')">Processos Envolvidos</li>
+            <!-- <li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','INVOICE','CAMBIAL')">Cambial</li>-->
+            <!-- <li class="tab" data-tab="tab6"  onclick="loadJsonData('EMBARQUE','INVOICE','EMBALAGEM')">Embalagem</li>-->
+            <!-- <li class="tab" data-tab="tab7"  onclick="loadJsonData('EMBARQUE','INVOICE','IMPRESSAO')">Impressão</li>-->
             <!-- <li class="tab" data-tab="tab8"  onclick="loadJsonData('EMBARQUE','INVOICE','EVENTOS')">Eventos</li>-->
         </ul>
 
@@ -189,46 +189,46 @@ th, td {
         
         <div id="tab1" class="tab-content active">
            
-            <h1 align="center">Consulta Atributos da Invoice</h1>
+            <h1 align="center">Consulta Atributos do FINANCEIRO</h1>
             <div>
                 <h2>Filtro de busca</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO INVOICE</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO DO PROCESSO</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
                         </fieldset>
                         <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">DATA ABERTURA</label>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="date"  >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">REGIME</label>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" value="Lista da tabela...">
                         </fieldset>
                         <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">MODAL</label>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" value="Lista da tabela...">
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
@@ -241,18 +241,18 @@ th, td {
         
             <br><br><br><br>
             <div>
-                <h2>Invoices Filtradas</h2>
+                <h2>Controles financeiros Filtrados</h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
                                     <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DA INVOICE</th>
-                                    <th align="center" bgcolor="Grey">ABERTURA</th>
-                                    <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
-                                    <th align="center" bgcolor="Grey">AGENTE</th>
+                                    <th align="center" bgcolor="Grey">NUMERO DO PROCESSO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
                                     <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
                                 </tr>
                             </thead>
@@ -339,65 +339,65 @@ th, td {
     
         
         <div id="tab2" class="tab-content">
-            <h1 align="center">Atributos da Invoice ...</h1>
+            <h1 align="center">Rubricas do FINANCEIRO ...</h1>
             <div>
-                <h2 align="left">Atributos da Capa da Invoice</h2>
+                <h2 align="left">Capa do processo FINANCEIRO</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">DATA</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO do PROCESSO</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">TIPO INVOICE</label>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CODIGO IMPORTADOR</label>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
                         </fieldset>
                         <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CNPJ IMPORTADOR</label>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">NOME IMPORTADOR</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CÓDIGO IMPORTADOR</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">NOME EXPORTADOR</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-7</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-8</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-9</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-10</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
@@ -410,19 +410,19 @@ th, td {
                 </div>
             </div>  
             <div>
-                <h2>Atributos de itens da Invoice</h2>
+                <h2>Rubricas do FINANCEIRO</h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
                                     <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">PN IMPORTADOR</th>
-                                    <th align="center" bgcolor="Grey">PN FABRICANTE</th>
-                                    <th align="center" bgcolor="Grey">SERIAL NUMBER</th>
-                                    <th align="center" bgcolor="Grey">CCUSTO</th>
-                                    <th align="center" bgcolor="Grey">QUANTIDADE</th>
-                                    <th align="center" bgcolor="Grey">UNIDADE</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
                                     
                                 </tr>
                             </thead>
@@ -508,65 +508,65 @@ th, td {
         </div>
 
         <div id="tab3" class="tab-content">
-            <h1 align="center">Detalhe do item... da Invoice ...</h1>
+            <h1 align="center">Detalhe das RUBRICA... do FINANCEIRO...</h1>
             <div>
                 
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO-1</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">CAMPO-2</label>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CAMPO-3</label>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
                         </fieldset>
                         <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CAMPO-4</label>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-7</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-8</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-9</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-10</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
@@ -582,7 +582,7 @@ th, td {
        
         <div id="tab4" class="tab-content">
             <div>
-                <h1>Processos Envolvidos com a Invoice...</h1>
+                <h1>Processos Envolvidos com o Processo Financeiro...</h1>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
