@@ -22,10 +22,14 @@
                         <span class="menu-item" onclick="toggleSubMenu(this)">Fases do processo...</span>
                         <ul class="submenu">
                             <li>
-                                <span class="submenu-item" onclick="loadContent('pre_embarque.html')">Pre-Embarque...</span>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Pre-Embarque...</span>
+                                <ul class="submenu">
+                                    <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
+                                    <li><a href="#" onclick="loadContent('pre_embarque.html')">Atributos Pré embarque</a></li>
+                                </ul>
                             </li>
                             <li>
-                                <span class="submenu-item"  onclick="loadContent('Embarque.html')">Embarque...</span>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Embarque...</span>
                                 <ul class="submenu">
                                     <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
                                     <li><a href="#" onclick="loadContent('Embarque.html')">Atributos Embarque</a></li>
@@ -35,7 +39,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <span class="submenu-item" onclick="loadContent('Desembaraco.html')">Desembaraço...</span>
+                                <span class="submenu-item" onclick="toggleSubMenu(this)">Desembaraço...</span>
                                 <ul class="submenu">
                                     <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
                                     <li><a href="#" onclick="loadContent('Forecast.html')">Forecast</a></li>

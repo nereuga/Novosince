@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Aplicação Web</title>
+   
+    <style>
+        /* Estilos das abas */
+ .tabs {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tab {
+    position: relative;
+    padding: 12px 20px;
+    margin-right: 5px;
+    background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    z-index: 1;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
+}
+
+.tab.active {
+    background: #fff;
+    color: #333;
+    z-index: 3;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 5px;
+    background: #fff;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Efeito 3D opcional */
+.tab.active:before, .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    width: 5px;
+    height: 5px;
+    background: #fff;
+}
+
+.tab.active:before {
+    left: -6px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 3px 0 0 0 #fff;
+}
+
+.tab.active:after {
+    right: -6px;
+    border-bottom-left-radius: 5px;
+    box-shadow: -3px 0 0 0 #fff;
+}
+ /* Estilize o card */
+ .card {
+     background-color: #f0f0f0;
+     border-radius: 8px;
+     border: 1px solid black;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     padding: 16px;
+     margin: 20px;
+ }
+
+ /* Estilize o cabeçalho do card */
+ .card-header {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+     gap: 10px; /* Espaçamento entre os campos */
+     align-items: center;
+ }
+
+ .card-button {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+     gap: 10px; /* Espaçamento entre os campos */
+     align-items: center;
+ }
+ .card-button4 {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+     gap: 10px; /* Espaçamento entre os campos */
+     align-items: center;
+ }
+
+ .card-button2 {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+     gap: 10px; /* Espaçamento entre os campos */
+     align-items: center;
+ }
+ /* Botão primário */
+ .btn-primary {
+    background-color: #4361ee;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a56d4;
+}
+/*Estilos para tabelas*/
+.heading {
+    display: flex;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 0px;
+    min-width: 50%;
+    font-size: medium;
+    width: 90%;
+    /* float: right;*/
+}
+
+th {
+    position: sticky;
+    top: 0px;
+    color: White;
+}
+
+.table-wrapper {
+    max-height: 800px;
+    max-width: 2300%;
+    overflow: scroll;
+    margin: 10px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    height: max-content;
+    width: auto;
+}
+
+.outer-wrapper {
+    border: 1px solid black;
+    box-shadow: 0px 0px 3px black;
+    margin: 28px;
+    border-radius: 5px;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+   
+
+    <div class="tab-container">
+        <ul class="tabs">
+            <li class="tab active" data-tab="tab1" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','CONSULTA')">Pre Embarque</li>
+        </ul>
+        <div class="conteudo-dinamico" id="conteudoJson">
+            <!-- Os parágrafos serão inseridos aqui via JavaScript -->
+            <p>Carregando conteúdo...</p>
+        </div>
+
+           
+        
+        <div id="tab1" class="tab-content active">
+            <div align="left">
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('pre_embarque.html')" style="margin-right: 5px;"/>
+            </div>
+            <div align="right">
+                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
+            </div>          
+            <h1 align="center">Atributos do Pré-embarque <span class="processo">PREMB-XYZ-0001</span></h1>
+            <div>
+                
+                <div class="card">
+                    
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO BOOKING</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">REF COMPLEMENTAR</label>
+                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">NUM EMBARQUE</label>
+                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">MODAL</label>
+                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">REGIME</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPOS CUSTOMIZADOS</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="Novo " onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    </div>
+                </div>
+            </div>   
+        </div>
+               
+    </div>
+
+   
+    
+    <script>
+
+         // Função principal para abrir abas
+         function openTab(tabId) {
+            // Remove a classe active de todas as abas e conteúdos
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Adiciona a classe active na aba e conteúdo correspondentes
+            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        
+        // Adiciona os event listeners para as abas
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    openTab(tabId);
+                });
+            });
+            
+            // Opcional: pode definir uma aba padrão aqui
+            // openTab('tab1');
+        });
+       
+        /*
+    async function loadJsonData() {
+    alert('entrei na funcao');
+    
+    try {
+        const response = await fetch('definicoes.json');
+        const jsonData = await response.json();
+        displayData(jsonData);
+    } catch (error) {
+        console.error("Erro ao carregar o JSON:", error);
+        document.getElementById('conteudoJson').innerHTML = '<p>Erro ao carregar os dados.</p>';
+    }
+    }
+
+    function displayData(jsonData) {
+        const container = document.getElementById('conteudoJson');
+        container.innerHTML = ''; // Limpa o conteúdo
+        
+        if (!jsonData || jsonData.length === 0) {
+            container.innerHTML = '<p>Nenhum dado disponível.</p>';
+            return;
+        }
+        
+        // Cria um parágrafo para cada item no JSON
+        jsonData.forEach(item => {
+            const p = document.createElement('p');
+            p.className = 'paragrafo-item';
+            p.textContent = item.texto; // Assumindo que seu JSON tem uma propriedade "texto"
+            
+            if (item.autor) {
+                const small = document.createElement('small');
+                small.textContent = ` - ${item.autor}`;
+                small.style.color = '#666';
+                p.appendChild(small);
+            }
+            
+            container.appendChild(p);
+        });
+    }
+        */
+
+
+   
+    </script>
+</body>
+</html>

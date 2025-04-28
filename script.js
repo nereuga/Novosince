@@ -106,7 +106,7 @@ window.loadJsonData = async function(fase,janela,aba) {
             container.innerHTML = '<p>Nenhum dado correspondente aos filtros.</p>';
             return;
         }
-        
+
         // Cria um parágrafo para cada item filtrado
         itensFiltrados.forEach(item => {
             const p = document.createElement('p');
@@ -115,4 +115,25 @@ window.loadJsonData = async function(fase,janela,aba) {
             p.textContent = `${item.ID} - ${item.DEFINICAO}`;
             container.appendChild(p);
         });
+        
+        const divElement = document.createElement('div');
+
+        const inputButton = document.createElement('input');
+        inputButton.type = 'button';
+        inputButton.value = 'Fechar Definição';
+        
+        inputButton.addEventListener('click', () => {
+            limparContainer(container);
+        });
+        
+        divElement.appendChild(inputButton);
+        container.appendChild(divElement);
+
+        
+
+    };
+
+    function limparContainer(container) {
+        container.innerHTML = ''; // Remove todo o conteúdo
+        // Alternativa: container.textContent = '';
     };

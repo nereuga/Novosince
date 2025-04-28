@@ -175,9 +175,10 @@ th, td {
 
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1" >Pre Embarque</li>
-            <li class="tab" data-tab="tab2" >Processos Envolvidos</li>
-            <!-- <li class="tab" data-tab="tab4" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','EVENTOS')">Eventos</li>-->
+            <li class="tab active" data-tab="tab1" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','CONSULTA')">Consulta</li>
+            <li class="tab" data-tab="tab2" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','ATRIBUTOS')">Atributos</li>
+            <li class="tab" data-tab="tab3" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','PROC-ENV')">Processos Envolvidos</li>
+            <li class="tab" data-tab="tab4" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','EVENTOS')">Eventos</li>
         </ul>
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
@@ -186,7 +187,7 @@ th, td {
 
         <div id="tab1" class="tab-content active" >
                        
-            <h1 align="center">Consulta Pré-embarques</h1>
+            <h1 align="center">Consulta Atributos de Pré-embarques</h1>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
@@ -230,9 +231,8 @@ th, td {
                         </fieldset>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-realistic" value="Novo Pre-Embarque" onclick="loadContent('Pre_emb_atr.html')" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-primary" value="Consultar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Limpar filtro" onclick="callAtributo()" />
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@ th, td {
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Data tabela...</div>
@@ -280,7 +280,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -303,7 +303,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -329,22 +329,93 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
                 </div>
             </div>
            
         </div>
-            
+       
+    
         
         <div id="tab2" class="tab-content">
+                      
+            <h1 align="center">Atributos do Pré-embarque ...</h1>
             <div>
-                <div align="left">
-                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('pre_embarque.html')" style="margin-right: 5px;"/>
+                
+                <div class="card">
+                    
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO BOOKING</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">REF COMPLEMENTAR</label>
+                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">NUM EMBARQUE</label>
+                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">MODAL</label>
+                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">REGIME</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPOS CUSTOMIZADOS</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-primary" value="Novo " onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Exportar dados" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                    </div>
                 </div>
-                <div align="right">
-                    <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
-                </div>         
+            </div>   
+        </div>
+               
+        
+        <div id="tab3" class="tab-content">
+            <div>
+               
                 <h1>Processos Envolvidos com o Pré-embarque...</h1>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
@@ -405,8 +476,8 @@ th, td {
                         </table>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
                     </div>
                 </div>
             </div>
@@ -427,7 +498,7 @@ th, td {
                     </fieldset>
                     
                     <div align="left">
-                        <input width="8" type="button" class="btn-realistic" value="Busca Eventos" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-primary" value="Busca Eventos" onclick="callAtributo()" />
                     </div> 
                 </div>
                 <div class="outer-wrapper" align="center">
@@ -523,9 +594,9 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
                 </div>
             </div>
         </div>

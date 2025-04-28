@@ -198,3 +198,110 @@ fieldset input {
 .tabela-dados tr:hover {
     background-color: #f1f1f1;
 }
+
+.btn-realistic {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px; /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #5fa0d8 0%, #3162bd 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-realistic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #5fa0d8 0%, #3162bd  100%);
+}
+
+.btn-realistic:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-realficha {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px; /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #99a0a1 0%, #333738 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-realficha:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #99a0a1  0%, #333738 100%);
+}
+
+.btn-realficha:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-voltar {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px; /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d  100%);
+}
+
+.btn-voltar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-definicao {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px; /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #4aaa4f 0%, #0f4b14 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-definicao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #4aaa4f 0%, #0f4b14 100%);
+}
+
+.btn-definicao:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.processo {
+    color: red;
+    font-weight: bold;
+    /* outros estilos */
+}
