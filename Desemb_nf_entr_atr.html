@@ -173,10 +173,10 @@ th, td {
     <div class="tab-container">
         <ul class="tabs">
             <!--<li class="tab active" data-tab="tab1" >Embarque</li> -->
-            <li class="tab active" data-tab="tab2" >Embarque</li>
-            <li class="tab" data-tab="tab4" >Carga</li>
-            <li class="tab" data-tab="tab5" onclick="loadContent('Embarque_inv.html')" >Invoice</li>
-            <li class="tab" data-tab="tab3" >Processos Envolvidos</li>
+            <li class="tab active" data-tab="tab2" >NF Entrada</li>
+            <li class="tab" data-tab="tab4" >ABA</li>
+            <li class="tab" data-tab="tab5" >ABA </li>
+            <li class="tab" data-tab="tab3" >ABA </li>
            
            
         </ul>
@@ -189,14 +189,14 @@ th, td {
             <div align="right">
                 <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;"/>
             </div>
-            <h1 align="center">Embarques</h1>
+            <h1 align="center">NF Entrada</h1>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO DUIMP</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
                         </fieldset>
                         <fieldset>
@@ -343,20 +343,20 @@ th, td {
         
         <div id="tab2" class="tab-content active">
             <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque.html')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Desemb_nf_entr.html')" style="margin-right: 5px;"/>
             </div>
             <div align="right">
                 <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
             </div>
            
-            <h1 align="center">Atributos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="center">NF Entrada <span class="processo">DESEMB-XYZ-0001</span></h1>
             <div>
                 
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO DO EMBARQUE</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO DA DUIMP</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
@@ -426,12 +426,12 @@ th, td {
         <div id="tab3" class="tab-content">
             <div>
                 <div align="left">
-                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Desemb_nf_entr.html')" style="margin-right: 5px;"/>
                 </div>
                 <div align="right">
                     <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
                 </div>
-                <h1>Processos Envolvidos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+                <h1>ABA À DEFINIR <span class="processo">EMB-XYZ-0001</span></h1>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
@@ -502,13 +502,13 @@ th, td {
 
         <div id="tab4" class="tab-content">
             <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Desemb_nf_entr.html')" style="margin-right: 5px;"/>
             </div>
             <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
             </div>
            
-            <h1 align="center">Dados da carga do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="center">ABA À DEFINIR <span class="processo">EMB-XYZ-0001</span></h1>
             <div>
                 <div class="card">
                     
@@ -582,12 +582,12 @@ th, td {
 
         <div id="tab5" class="tab-content">
             <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Desemb_nf_entr.html')" style="margin-right: 5px;"/>
             </div>
             <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
             </div>
-            <h1 align="center">Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="center">ABA À DEFINIR <span class="processo">EMB-XYZ-0001</span></h1>
             <div>
                 <h2>Filtro de busca</h2>
                 <div class="card">

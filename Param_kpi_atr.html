@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>INVOICE</title>
+    <title>EMBARQUE</title>
    
     <style>
         /* Estilos das abas */
@@ -173,198 +172,166 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <!--<li class="tab active" data-tab="tab1"  onclick="loadJsonData('EMBARQUE','INVOICE','CONSULTA')">Consulta</li>-->
-            <li class="tab active" data-tab="tab2" >Invoice</li>
-           <!-- <li class="tab" data-tab="tab3"  onclick="loadJsonData('EMBARQUE','INVOICE','ITEM')">Detalhe item</li>-->
-            <!--<li class="tab" data-tab="tab4"  onclick="loadJsonData('EMBARQUE','INVOICE','PROC-ENV')">Processos Envolvidos</li>-->
-            <!--<li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','INVOICE','CAMBIAL')">Cambial</li>-->
-            <!--<li class="tab" data-tab="tab6"  onclick="loadJsonData('EMBARQUE','INVOICE','EMBALAGEM')">Embalagem</li>-->
-            <!--<li class="tab" data-tab="tab7"  onclick="loadJsonData('EMBARQUE','INVOICE','IMPRESSAO')">Impressão</li>-->
-            <!-- <li class="tab" data-tab="tab8"  onclick="loadJsonData('EMBARQUE','INVOICE','EVENTOS')">Eventos</li>-->
+            <li class="tab active" data-tab="tab1" >Desembaraço</li>
         </ul>
 
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-            
-
-               
-        <div id="tab2" class="tab-content active">
-            <h1 align="center">Atributos da Invoice <span class="processo">INV-XYZ-0001</span> do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+                 
+        
+        <div id="tab1" class="tab-content active">
             <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"   onclick="loadContent('Embarque_inv.html')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Param_kpi.html')" style="margin-right: 5px;"/>
             </div>
             <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','INVOICE','ATRIBUTOS')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')" style="margin-right: 5px;"/>
             </div>
+            <h1 align="center">Atributos do KPI <span class="processo">KPI- ENTREGA NA BASE</span></h1>
             <div>
-                <h2 align="left">Atributos da Capa da Invoice <span class="processo">INV-XYZ-0001</span></h2>
-                <div align="right">
-                    <input width="8" type="button" class="btn-realficha" value="Dados cambiais " onclick="loadContent('Invoice_camb.html')" style="margin-right: 50px;" />
-                    <input width="8" type="button" class="btn-realficha" value="   Embalagem   " onclick="loadContent('Invoice_embal.html')"  />
-                </div>
-                <div align="left">
-                    <form>
-                        <label for="arquivo" style="font-size:25px;color:maroon">Upload Invoice em PDF:</label>
-                        <input type="file" id="arquivo" name="arquivo" accept=".pdf">
-                    </form>
-                </div><br><br><br>
+                
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">DATA</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NOME KPI</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">TIPO INVOICE</label>
+                            <!-- <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">EVENTO INICIAL</label>-->
+                            <input width="8" type="button"  value="Evento inicial"  onclick="loadContent('Param_kpi_eventos.html')"/>
                             <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
+                           
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CODIGO IMPORTADOR</label>
+                            <!-- <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">EVENTO FINAL</label>-->
+                            <input width="8" type="button" value="Evento Final"  onclick="loadContent('Param_kpi_eventos.html')"/>
                             <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
+                           
                         </fieldset>
                         <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CNPJ IMPORTADOR</label>
-                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
+                            
                         </fieldset>
                     </div>
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">NOME IMPORTADOR</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CÓDIGO IMPORTADOR</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">NOME EXPORTADOR</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    </div>
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-7</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-8</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-9</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-10</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    </div>
-                    
+                                      
+                   
                 </div>
-                <div align="center" >
-                    <input width="8" type="button" class="btn-realistic" value=" Nova Invoice " onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="   Salvar     " onclick="callAtributo()" style="margin-right: 5px;"/>
+                <div align="center">
+                    <input width="8" type="button" class="btn-realistic" value="Novo KPI " onclick="loadContent('Param_kpi_metrica.html')" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
                     <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="   Imprimir   " onclick="loadContent('Invoice_impr.html')" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
                 </div>
-                
-            </div>  
+            </div>   
             <div>
-                <h2>Atributos de itens da Invoice <span class="processo">INV-XYZ-0001</span> do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
+                <h2>Métricas do KPI <span class="processo">KPI- ENTREGA NA BASE</span></h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
                                     <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">PN IMPORTADOR</th>
-                                    <th align="center" bgcolor="Grey">PN FABRICANTE</th>
-                                    <th align="center" bgcolor="Grey">SERIAL NUMBER</th>
-                                    <th align="center" bgcolor="Grey">CCUSTO</th>
-                                    <th align="center" bgcolor="Grey">QUANTIDADE</th>
-                                    <th align="center" bgcolor="Grey">UNIDADE</th>
-                                    
+                                    <th align="center" bgcolor="Grey">META</th>
+                                    <th align="center" bgcolor="Grey">REGIME</th>
+                                    <th align="center" bgcolor="Grey">MODAL</th>
+                                    <th align="center" bgcolor="Grey">INCOTERMS</th>
+                                    <th align="center" bgcolor="Grey">ORIGEM</th>
+                                    <th align="center" bgcolor="Grey">INTERVALOS</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Param_kpi_metrica.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosiscomex">5</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosiscomex">Importação definitiva</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosinterno">AÉREO</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
+                                        <div style="width: 100px;" id="ncm">XYZ</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <div style="width: 100px;">ASIA</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <div style="width: 100px;">[{'0','5'},{'6','10'},{'11','N'}]</div>
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Param_kpi_metrica.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <div style="width: 100px;" id="codigosiscomex">30</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        <div style="width: 100px;" id="codigosiscomex">Importação definitiva</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                        <div style="width: 100px;" id="codigosinterno">MARÍTIMO</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                        <div style="width: 100px;" id="ncm">XYZ</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
+                                        <div style="width: 100px;">ASIA</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                        <div style="width: 100px;">[{'0','30'},{'31','35'},{'36','N'}]</div>
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Param_kpi_metrica.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <div style="width: 100px;" id="codigosiscomex">3</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        <div style="width: 100px;" id="codigosiscomex">Importação definitiva</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                        <div style="width: 100px;" id="codigosinterno">AÉREO</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                        <div style="width: 100px;" id="ncm">XYZ</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
+                                        <div style="width: 100px;">EUROPA</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                        <div style="width: 100px;">[{'0','5'},{'6','10'},{'11','N'}]</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Param_kpi_metrica.html')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">15</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Importação definitiva</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="codigosinterno">MARÍTIMO</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="ncm">XYZ</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">EUROPA</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">[{'0','15'},{'16','30'},{'31','N'}]</div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -372,13 +339,13 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="  Novo Item   " onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
                 </div>
-            </div> 
+               
+            </div>
         </div>
-       
+             
     </div>
 
     <script>

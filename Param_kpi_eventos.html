@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMBARQUE</title>
+    <title>Minha Aplicação Web</title>
    
     <style>
         /* Estilos das abas */
@@ -170,143 +170,142 @@ th, td {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+   
+
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1" >Invoice</li>
-        
+            <li class="tab active" data-tab="tab1" onclick="loadJsonData('TODAS','TODAS','EVENTOS')">Eventos</li>
         </ul>
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-        
+                       
         <div id="tab1" class="tab-content active">
-            <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
-            </div>
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
-            </div>
-            <h1 align="center">Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
             <div>
-                <h2>Filtro de busca</h2>
-                <div class="card">
-                    
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
-                   
-                    
+                <div align="left">
+                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Param_kpi_atr.html')" style="margin-right: 5px;"/>
                 </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
+                <div align="right">
+                    <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')" style="margin-right: 5px;"/>
                 </div>
-            </div>
-        
-            <br><br><br><br>
-            <div>
-                <h2>Lista de Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
+                <h1>Eventos do ...</h1>
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">Tipo de PROCESSO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Lista Estática-  Dropdown" >
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO PROCESSO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
+                    </fieldset>
+
+                    <div align="left">
+                        <input width="8" type="button" class="btn-realistic" value="Busca Eventos" onclick="callAtributo()" />
+                    </div> 
+                </div>
+               
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DA INVOICE</th>
-                                    <th align="center" bgcolor="Grey">ABERTURA</th>
-                                    <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
-                                    <th align="center" bgcolor="Grey">AGENTE</th>
-                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
+                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
+                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Recebimento da Invoice" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Booking da Carga" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Agendamento de Transporte" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Conferência de Documentos de Embarque" >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Envio de Documentos de Instrução RFB ao Despachante" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Preparação e Revisão do Catálogo de Produtos" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Eventos CUSTOMIZADOS" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                
-            </div>
-            <div align="center">
-                <input width="20" type="button" class="btn-realistic" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
-                <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
-               
+                <div align="center">
+                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
+                </div>
             </div>
         </div>
+
+       
     </div>
 
     <script>

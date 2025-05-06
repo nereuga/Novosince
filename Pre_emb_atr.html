@@ -175,7 +175,8 @@ th, td {
 
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1" onclick="loadJsonData('PRE-EMBARQUE','PRE-EMBARQUE','CONSULTA')">Pre Embarque</li>
+            <li class="tab active" data-tab="tab1" >Pre Embarque</li>
+            <li class="tab" data-tab="tab2" >Processos Envolvidos</li>
         </ul>
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
@@ -261,6 +262,80 @@ th, td {
                     </div>
                 </div>
             </div>   
+        </div>
+        <div id="tab2" class="tab-content">
+            <div>
+                <div align="left">
+                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('pre_emb_atr.html')" style="margin-right: 5px;"/>
+                </div>
+                <div align="right">
+                    <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
+                </div>         
+                <h1>Processos Envolvidos com o Pré-embarque...</h1>
+                <div class="outer-wrapper" align="center">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th align="center" bgcolor="Grey">EDITAR</th>
+                                    <th align="center" bgcolor="Grey">TIPO DE PROCESSO</th>
+                                    <th align="center" bgcolor="Grey">NUMERO DO PROCESSO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    </div>
+                </div>
+            </div>
         </div>
                
     </div>
