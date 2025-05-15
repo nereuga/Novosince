@@ -11,6 +11,7 @@ function loadContent(page) {
         .then(response => response.text())
         .then(html => {
             document.getElementById('mainContent').innerHTML = html;
+             setupBackButton();
             //document.getElementById('pictureButtonsContainer').style.display = 'none';
         })
         .catch(error => {
@@ -24,6 +25,28 @@ function loadContent(page) {
         });
 }
 
+// Função separada para configurar o botão de voltar
+function setupBackButton() {
+    const previousPage = sessionStorage.getItem('previousPage');
+    const backButtons = document.querySelectorAll('.btn-retornar'); // Seleciona TODOS os botões com essa classe
+    const selectButtons = document.querySelectorAll('.btn-selecionar');// Seleciona TODOS os botões com essa classe
+
+    if (backButtons.length && previousPage) {
+        backButtons.forEach(button => {
+            button.onclick = function() {
+                loadContent(previousPage); // Ou `window.location.href = previousPage;` se preferir recarregar a página
+            };
+        });
+    }
+    if (selectButtons.length && previousPage) {
+        selectButtons.forEach(button => {
+            button.onclick = function() {
+                loadContent(previousPage); // Ou `window.location.href = previousPage;` se preferir recarregar a página
+            };
+        });
+    }
+
+}
 
 // Função para exibir picture buttons
 function showPictureButtonsFases() {
@@ -137,3 +160,12 @@ window.loadJsonData = async function(fase,janela,aba) {
         container.innerHTML = ''; // Remove todo o conteúdo
         // Alternativa: container.textContent = '';
     };
+
+    
+    function goToJanela(janela1,janela2) {
+            sessionStorage.setItem('previousPage', janela1);
+            //window.location.href = janela2;
+            loadContent(janela2);
+    };
+    
+    

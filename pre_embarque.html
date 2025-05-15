@@ -185,54 +185,109 @@ th, td {
         </div>
 
         <div id="tab1" class="tab-content active" >
-                       
+            <div align="right">
+                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
+            </div> 
             <h1 align="center">Consulta Pré-embarques</h1>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO BOOKING</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
+                        <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">PERÍODO de / até</label>
+                            <div class="periodo-inputs">
+                                <input id="dataInicio" name="dataInicio" class="periodo-input" type="date">
+                                <input id="dataFim" name="dataFim" class="periodo-input" type="date">
+                            </div>
                         </fieldset>
-                        <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">REF COMPLEMENTAR</label>
-                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content"  type="text" value="Texto Livre" >
+
+                        <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF.PRE-EMBARQUE</label>
+                            <div class="periodo-inputs">
+                                <input width="50%" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('pre_embarque.html','busca_processo.html')" style="margin-right: 5px;"/>
+                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
+                            </div>
                         </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">EMBARQUE</label>
-                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" value="Texto Livre">
+                                            
+                       <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:rgb(14, 12, 12)" align="left">MODAL</label>
+                            <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content">
+                                <option value="">Selecione uma opção</option>
+                                <option value="opcao1">AEREO</option>
+                                <option value="opcao2">MARITIMO</option>
+                                <option value="opcao3">FERROVIARIO</option>
+                                <option value="opcao3">RODOVIARIO</option>
+                            </select>
                         </fieldset>
-                        <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">MODAL</label>
-                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content"  type="text" value="Lista da tabela ...">
+
+                       <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:rgb(14, 12, 12)"
+                                align="left">REGIME</label>
+                            <select style="font-size: 130%; color: black" id="idcomex" name="idcomex"
+                                class="row-content">
+                                <option value="">Selecione uma opção</option>
+                                <option value="opcao1">4 - IMPORTAÇÃO DE BENS PARA INDUSTRIALIZAÇÃO</option>
+                                <option value="opcao1">8 - NF COMPLEMENTAR IMPORTAÇÃO BENS PARA INDUSTRIALIZAÇÃO
+                                </option>
+                                <option value="opcao1">9 - IMPORTAÇÃO DE BENS PARA COMERCIALIZAÇÃO</option>
+                                <option value="opcao1">10 - IMPORTAÇÃO VIA COURIER - REVENDA</option>
+                                <option value="opcao1">11 - NF COMPLEMENTAR IMPORTAÇÃO PARA REVENDA</option>
+                                <option value="opcao1">12 - IMPORTAÇÃO EM DRAWBACK</option>
+                                <option value="opcao1">13 - DEVOLUÇÃO DE VENDA PRODUÇÃO ESTABELECIMENTO</option>
+                                <option value="opcao1">14 - DEVOLUÇÃO DE VENDA DE MERCADORIA REC. TERCEIROS</option>
+                                <option value="opcao1">15 - DEVOLUÇÃO DE VENDA REGIME DRAWBACK</option>
+                                <option value="opcao1">16 - IMPORTAÇÃO ATIVO FIXO</option>
+                                <option value="opcao1">17 - NACIONALIZAÇÃO DE TEMPORÁRIO (REPETRO/ADMISSÃO)</option>
+                                <option value="opcao1">18 - NF COMPLEMENTAR DE ATIVO</option>
+                                <option value="opcao1">19 - DEVOLUÇÃO DE ATIVO FIXO</option>
+                                <option value="opcao1">20 - COMPRA DE USO/CONSUMO P/ OPERAÇÃO</option>
+                                <option value="opcao1">21 - COMPRA DE USO/CONSUMO</option>
+                                <option value="opcao1">22 - IMPORTAÇÃO VIA COURRIER - USO/CONSUMO</option>
+                                <option value="opcao1">23 - NF COMPLEMENTAR DE COMPRA DE USO E CONSUMO</option>
+                                <option value="opcao1">47 - IMPORTAÇÃO DE TEMPORÁRIO</option>
+                                <option value="opcao1">57 - RENOVACAO DE TEMPORARIO</option>
+                                <option value="opcao1">67 - IMPORTAÇÃO DE AMOSTRA</option>
+                                <option value="opcao1">68 - IMPORTAÇÃO SEM COBERTURA CAMBIAL</option>
+                                <option value="opcao1">69 - RETORNO DE BEM ENVIADO PARA REPARO</option>
+                                <option value="opcao1">70 - IMPORTAÇÃO NF-E FILHOTE</option>
+                                <option value="opcao1">71 - RETORNO DE EXPORTAÇÃO TEMPORÁRIA</option>
+                                <option value="opcao1">72 - IMPORTAÇÃO DE SUCATA</option>
+                                <option value="opcao1">73 - IMPORTAÇÃO BEM GARANTIA</option>
+                                <option value="opcao1">74 - EXPORTACAO TEMPORARIA REPARO ADM TEMPORARIA</option>
+                                <option value="opcao1">75 - EXPORTACAO TEMPORARIA MATERIAL NACIONAL</option>
+                                <option value="opcao1">76 - REEXPORTACAO - RETURN TEMPORARY ADMISSION </option>
+                                <option value="opcao1">77 - EXPORTACAO DEFINITIVA COM COBERTURA CAMBIAL</option>
+                                <option value="opcao1">78 - EXPORTACAO DEFINITIVA SEM COBERTURA CAMBIAL</option>
+                                <option value="opcao1">79 - EXPORTACAO TEMPORARIA PARA SERVIÇOS</option>
+                                <option value="opcao1">80 - EXPORTACOES CONSOLIDADAS</option>
+                            </select>
                         </fieldset>
                     </div>
                     <div class="card-header" align="left">
+                        
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">REGIME</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text" value="Lista da tabela ..."  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:black" align="left">RESPONSÁVEL</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
                         </fieldset>
                     
                         <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:black" align="left">CAMPO-CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:black" align="left">CAMPO-CUSTOMIZADO</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
+                        </fieldset>
+                         <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:black" align="left">CAMPO-CUSTOMIZADO</label>
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
                         </fieldset>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-realistic" value="Novo Pre-Embarque" onclick="loadContent('Pre_emb_atr.html')" style="margin-right: 5px;"/>
                         <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
                         <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realnovo" value="Novo Pre-Embarque" onclick="loadContent('Pre_emb_atr.html')" style="margin-right: 5px;"/>
                     </div>
                 </div>
             </div>
@@ -246,17 +301,17 @@ th, td {
                             <thead>
                                 <tr>
                                     <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO BOOKING</th>
-                                    <th align="center" bgcolor="Grey">EMBARQUE</th>
+                                    <th align="center" bgcolor="Grey">REF.PRE-EMB</th>
+                                    <th align="center" bgcolor="Grey">NUM. BOOKING</th>
                                     <th align="center" bgcolor="Grey">MODAL</th>
                                     <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">CAMPO-5</th>
-                                    <th align="center" bgcolor="Grey">CAMPO-6</th>
+                                    <th align="center" bgcolor="Grey">REF.EMBARQUE</th>
+                                    <th align="center" bgcolor="Grey">RESPONSAVEL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
+                                    <td align="center" class="list-inline-item">
                                         <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -279,7 +334,7 @@ th, td {
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
+                                    <td align="center" class="list-inline-item">
                                         <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -302,7 +357,7 @@ th, td {
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
+                                    <td align="center" class="list-inline-item">
                                         <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Pre_emb_atr.html')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">

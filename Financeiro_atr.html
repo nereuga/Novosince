@@ -172,8 +172,8 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','CONSULTA')">Financeiro</li>
-            <!-- <li class="tab" data-tab="tab2"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','ATRIBUTOS')">Atributos</li>-->
+            <!-- <li class="tab active" data-tab="tab1"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','CONSULTA')">Financeiro</li>-->
+            <li class="tab active" data-tab="tab2"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','ATRIBUTOS')">Financeiro</li>
             <!-- <li class="tab" data-tab="tab3"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','ITEM')">Detalhe item</li>-->
             <!-- <li class="tab" data-tab="tab4"  onclick="loadJsonData('FINANCEIRO','FINANCEIRO','PROC-ENV')">Processos Envolvidos</li>-->
             <!-- <li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','INVOICE','CAMBIAL')">Cambial</li>-->
@@ -187,9 +187,12 @@ th, td {
             <p>Carregando conteúdo...</p>
         </div>
         
-        <div id="tab1" class="tab-content active">
+        <div id="tab1" class="tab-content">
+            <div align="left">
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Financeiro.html')" style="margin-right: 5px;"/>
+            </div>
             <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
             </div>
             <h1 align="center">FINANCEIRO</h1>
             <div>
@@ -235,8 +238,8 @@ th, td {
                         </fieldset>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Consultar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Limpar filtro" onclick="callAtributo()" />
                     </div>
                 </div>
             </div>
@@ -261,7 +264,7 @@ th, td {
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Financeiro_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
@@ -284,7 +287,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Financeiro_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -307,7 +310,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Financeiro_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -334,13 +337,19 @@ th, td {
                 </div>
                 <div align="center">
                     <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
+                    <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
                 </div>
             </div>
         </div>
     
         
-        <div id="tab2" class="tab-content">
+        <div id="tab2" class="tab-content active">
+            <div align="left">
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Financeiro.html')" style="margin-right: 5px;"/>
+            </div>
+            <div align="right">
+                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
+            </div>
             <h1 align="center">Rubricas do FINANCEIRO ...</h1>
             <div>
                 <h2 align="left">Capa do processo FINANCEIRO</h2>
@@ -404,10 +413,11 @@ th, td {
                         </fieldset>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-primary" value="Novo " onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Exportar dados" onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                       
+                        <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-realnovo" value="Novo " onclick="callAtributo()" style="margin-right: 5px;"/>
+                        <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
                     </div>
                 </div>
             </div>  
@@ -431,7 +441,7 @@ th, td {
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
@@ -454,7 +464,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -477,7 +487,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -503,8 +513,8 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
+                   <!-- <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
                 </div>
             </div> 
         </div>
@@ -573,9 +583,10 @@ th, td {
                         </fieldset>
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-primary" value="Novo " onclick="callAtributo()" />
+                       
                         <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
                         <input width="8" type="button" class="btn-primary" value="Exportar dados" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-realnovo" value="Novo " onclick="callAtributo()" />
                     </div>
                 </div>
             </div>  

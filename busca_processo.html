@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMBARQUE</title>
+    <title>Minha Aplicação Web</title>
    
     <style>
         /* Estilos das abas */
@@ -168,89 +168,117 @@ th, td {
 }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+
 </head>
+    
 <body>
+   
+
     <div class="tab-container">
-        <ul class="tabs">
-            <li class="tab active" data-tab="tab1" >Invoice</li>
-        
-        </ul>
-        <div class="conteudo-dinamico" id="conteudoJson">
-            <!-- Os parágrafos serão inseridos aqui via JavaScript -->
-            <p>Carregando conteúdo...</p>
-        </div>
-        
-        <div id="tab1" class="tab-content active">
+       
+        <div id="tab1" class="tab-content active" >
             <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+                <input width="8" type="button" class="btn-retornar" value="Voltar"  style="margin-right: 5px;"/>
             </div>
             <div align="right">
                 <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
-            </div>
-            <h1 align="center">Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
-             <!--<div>
-                <h2>Filtro de busca</h2>
+            </div>   
+            <h1 align="center">Busca processos de ...</h1>
+            <div>
+                <h2>Filtro de Busca</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:rgb(14, 12, 12)" align="left">NUMERO PROCESSO</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">DATA INI</label>
+                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content"  type="date" value="Texto Livre" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:rgb(14, 12, 12)" align="left">DATA FIM</label>
+                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="date" value="Texto Livre">
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:rgb(14, 12, 12)" align="left">MODAL</label>
+                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content"  type="text" value="Lista da tabela ...">
                         </fieldset>
                     </div>
-                   
+                    <div class="card-header" align="left">
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:rgb(14, 12, 12)" align="left">REGIME</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text" value="Lista da tabela ..."  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 12, 12)" align="left">CAMPO-6</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
+                        </fieldset>
                     
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:rgb(14, 12, 12)" align="left">CAMPO-5</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 12, 12)" align="left">CAMPO-6</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
+                        </fieldset>
+                    </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="CONSULTAR" onclick="callAtributo()" style="margin-right: 5px;"/>
+                        
+                        
+                    </div>
                 </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
-                </div>
-            </div>-->
+            </div>
         
-            <br><br><br><br>
+            <br><br>
             <div>
-                <h2>Lista de Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
+                <h2>Processos Filtrados</h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DA INVOICE</th>
-                                    <th align="center" bgcolor="Grey">ABERTURA</th>
-                                    <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
-                                    <th align="center" bgcolor="Grey">AGENTE</th>
-                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">SELECIONAR</th>
+                                    <th align="center" bgcolor="Grey">NUMERO PROCESSO</th>
+                                    <th align="center" bgcolor="Grey">DATA</th>
+                                    <th align="center" bgcolor="Grey">CAMPO-1</th>
+                                    <th align="center" bgcolor="Grey">CAMPO-2</th>
+                                    <th align="center" bgcolor="Grey">CAMPO-3</th>
+                                    <th align="center" bgcolor="Grey">CAMPO-4</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" class="list-inline-item">
+                                        <button  class="btn-selecionar" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosiscomex">Data tabela...</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosiscomex">Data tabela...</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
+                                        <div style="width: 100px;" id="codigosinterno">Data tabela...</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
+                                        <div style="width: 100px;" id="ncm">Data tabela...</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <div style="width: 100px;">Data tabela...</div>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <div style="width: 100px;">Data tabela...</div>
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" class="list-inline-item">
+                                        <button  class="btn-selecionar" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -272,8 +300,8 @@ th, td {
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" class="list-inline-item">
+                                        <button  class="btn-selecionar" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  ><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -298,17 +326,17 @@ th, td {
                         </table>
                     </div>
                 </div>
-                
+                <div align="center">
+                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                </div>
             </div>
-            <div align="center">
-                <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realnovo" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
-                <!--<input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
-               
-            </div>
+           
         </div>
+      
     </div>
 
+   
+    
     <script>
 
          // Função principal para abrir abas
@@ -339,46 +367,50 @@ th, td {
             // Opcional: pode definir uma aba padrão aqui
             // openTab('tab1');
         });
-
+       
         /*
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.tab');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove a classe active de todas as abas e conteúdos
-                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                    
-                    // Adiciona a classe active à aba clicada
-                    tab.classList.add('active');
-                    
-                    // Mostra o conteúdo correspondente
-                    const tabId = tab.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
+    async function loadJsonData() {
+    alert('entrei na funcao');
+    
+    try {
+        const response = await fetch('definicoes.json');
+        const jsonData = await response.json();
+        displayData(jsonData);
+    } catch (error) {
+        console.error("Erro ao carregar o JSON:", error);
+        document.getElementById('conteudoJson').innerHTML = '<p>Erro ao carregar os dados.</p>';
+    }
+    }
 
-        function changeTab(tabId) {
-        // Remove a classe 'active' de todas as abas
-        document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-        });
-    
-        // Adiciona a classe 'active' apenas na aba desejada
-        document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
-    
-        // Esconde todos os conteúdos das abas
-        document.querySelectorAll('.tab-content').forEach(content => {
-        content.style.display = 'none';
-        });
-    
-        // Mostra apenas o conteúdo da aba desejada
-        document.getElementById(tabId).style.display = 'block';
+    function displayData(jsonData) {
+        const container = document.getElementById('conteudoJson');
+        container.innerHTML = ''; // Limpa o conteúdo
+        
+        if (!jsonData || jsonData.length === 0) {
+            container.innerHTML = '<p>Nenhum dado disponível.</p>';
+            return;
         }
+        
+        // Cria um parágrafo para cada item no JSON
+        jsonData.forEach(item => {
+            const p = document.createElement('p');
+            p.className = 'paragrafo-item';
+            p.textContent = item.texto; // Assumindo que seu JSON tem uma propriedade "texto"
+            
+            if (item.autor) {
+                const small = document.createElement('small');
+                small.textContent = ` - ${item.autor}`;
+                small.style.color = '#666';
+                p.appendChild(small);
+            }
+            
+            container.appendChild(p);
+        });
+    }
         */
 
+
+   
     </script>
 </body>
 </html>

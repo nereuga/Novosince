@@ -188,7 +188,7 @@ th, td {
             </div>
            
             <h1 align="center">Dados da carga do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
-            <div>
+            <!--<div>
                 <div class="card">
                     
                     <div class="card-header" align="left">
@@ -204,7 +204,14 @@ th, td {
                     <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
                     <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 50px;"/>
                 </div>
-            </div>
+            </div>-->
+
+            <div align="left">
+                    <form>
+                        <label for="arquivo" style="font-size:25px;color:maroon">Upload Dados da carga em PDF:</label>
+                        <input type="file" id="arquivo" name="arquivo" accept=".pdf">
+                    </form>
+            </div><br><br><br>
         
             <br><br><br><br>
 
@@ -217,7 +224,11 @@ th, td {
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
                         </fieldset>
                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CONHECIMENTO EMBARQUE</label>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CONHEC. MASTER</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
+                        </fieldset>
+                        <fieldset>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CONHEC. HOUSE</label>
                             <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
                         </fieldset>
                         <fieldset>
@@ -253,7 +264,7 @@ th, td {
                 <div align="center">
                     <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;" />
                     <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
                 </div>
             </div>
             

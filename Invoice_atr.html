@@ -199,11 +199,8 @@ th, td {
                 <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','INVOICE','ATRIBUTOS')" style="margin-right: 5px;"/>
             </div>
             <div>
-                <h2 align="left">Atributos da Capa da Invoice <span class="processo">INV-XYZ-0001</span></h2>
-                <div align="right">
-                    <input width="8" type="button" class="btn-realficha" value="Dados cambiais " onclick="loadContent('Invoice_camb.html')" style="margin-right: 50px;" />
-                    <input width="8" type="button" class="btn-realficha" value="   Embalagem   " onclick="loadContent('Invoice_embal.html')"  />
-                </div>
+                <h2 align="left">Cabeçalho da Invoice <span class="processo">INV-XYZ-0001</span></h2>
+                
                 <div align="left">
                     <form>
                         <label for="arquivo" style="font-size:25px;color:maroon">Upload Invoice em PDF:</label>
@@ -272,16 +269,19 @@ th, td {
                     
                 </div>
                 <div align="center" >
-                    <input width="8" type="button" class="btn-realistic" value=" Nova Invoice " onclick="callAtributo()" style="margin-right: 5px;"/>
+                   
                     <input width="8" type="button" class="btn-realistic" value="   Salvar     " onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Invoice" onclick="callAtributo()" style="margin-right: 5px;"/>
                     <input width="8" type="button" class="btn-realistic" value="   Imprimir   " onclick="loadContent('Invoice_impr.html')" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-realnovo" value=" Nova Invoice " onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <!--<input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" />-->
+                    <input width="8" type="button" class="btn-realficha" value="Dados cambiais " onclick="loadContent('Invoice_camb.html')" style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realficha" value="   Embalagem   " onclick="loadContent('Invoice_embal.html')"  />
                 </div>
                 
             </div>  
             <div>
-                <h2>Atributos de itens da Invoice <span class="processo">INV-XYZ-0001</span> do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
+                <h2>Lista de itens da Invoice <span class="processo">INV-XYZ-0001</span> do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
@@ -372,9 +372,9 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <!--<input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>-->
                     <input width="8" type="button" class="btn-realistic" value="  Novo Item   " onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <!--<input width="8" type="button" class="btn-realistic" value="     Sair     " onclick="callAtributo()" style="margin-right: 5px;"/>-->
                 </div>
             </div> 
         </div>

@@ -344,6 +344,12 @@ th, td {
     
         
         <div id="tab2" class="tab-content active">
+            <div align="left">
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Desembaraco.html')" style="margin-right: 5px;"/>
+            </div>
+            <div align="right">
+                <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
+            </div>
            
             <h1 align="center">Atributos do Desembaraço ...</h1>
             <div>
@@ -417,89 +423,95 @@ th, td {
                 </div>
             </div>   
             <div>
-                <h2>Itens do desembaraço</h2>
+              
+                <h1>Eventos do Desembaraço</h1>
+                              
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DO EMBARQUE</th>
-                                    <th align="center" bgcolor="Grey">DATA</th>
-                                    <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
-                                    <th align="center" bgcolor="Grey">AGENTE</th>
-                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
+                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
+                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Desembaraco_item.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Recebimento da Invoice" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Desembaraco_item.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Booking da Carga" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Desembaraco_item.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Agendamento de Transporte" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Conferência de Documentos de Embarque" >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Envio de Documentos de Instrução RFB ao Despachante" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Preparação e Revisão do Catálogo de Produtos" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Eventos CUSTOMIZADOS" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                             </tbody>
@@ -507,11 +519,11 @@ th, td {
                     </div>
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;"/>
                     <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
                 </div>
-               
-            </div>
+            </div> 
         </div>
         
        

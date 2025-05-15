@@ -199,12 +199,13 @@ th, td {
                 <h2>Filtro de busca</h2>
                 <div class="card">
                     
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
+                   
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF.EMBARQUE</label>
+                            <div class="periodo-inputs">
+                                <input width="50%" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('invoice.html','busca_processo.html')" style="margin-right: 5px;"/>
+                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
+                            </div>
+                    
                    
                     
                 </div>
@@ -308,9 +309,9 @@ th, td {
                 
             </div>
             <div align="center">
-                <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
-                <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>
+                <!--<input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />-->
+                <input width="20" type="button" class="btn-realnovo" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
+                <!--<input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
                
             </div>
         </div>
