@@ -1,1 +1,686 @@
-[{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":1,"DEFINICAO":"Sempre que a opção Pré-Embarque for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":2,"DEFINICAO":"O usuário deverá digitar os dados de filtro e clicar no botão Consultar."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":3,"DEFINICAO":"Será exibida uma lista com todos os Pré-Embarques que obedeçam aos critérios do filtro."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":4,"DEFINICAO":"Caso a consulta não encontre nenhum Pré-embarque que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\"."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":5,"DEFINICAO":"Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados do Pré-embarque escolhido."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":6,"DEFINICAO":"Caso a lista contenha apenas 1(um) Pré-embarque, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados do Pré-Embarque filtrado."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":7,"DEFINICAO":"O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. "},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"CONSULTA","ID":8,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"Os atributos serão dinâmicos para Cliente/Tipo de processo"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":2,"DEFINICAO":"Os atributos obrigatórios deverão estar marcados com *"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":3,"DEFINICAO":"Deverá haver um tooltip para informações de preenchimento de cada campo"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":4,"DEFINICAO":"O Botão Salvar deverá persistir os dados na base e as seguintes críticas serão feitas:                4.1, 4.2, 4.3, 4.n "},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":5,"DEFINICAO":"O botão Novo deverá limpar a tela para uma nova digitação"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":6,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel,"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"ATRIBUTOS","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"PROC-ENV","ID":1,"DEFINICAO":"Será exibida uma lista de todos os processos envolvidos com o Pré-embarque<br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"PROC-ENV","ID":2,"DEFINICAO":"Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"PROC-ENV","ID":3,"DEFINICAO":"O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Pré-Embarque <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"PROC-ENV","ID":4,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel, <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"PROC-ENV","ID":5,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":1,"DEFINICAO":"Será exibida uma lista de todos os eventos do Pré-embarque<br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":2,"DEFINICAO":"Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo \"Pré-embarque\" e o Número do processo Pré-embarque.<br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":3,"DEFINICAO":"Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":4,"DEFINICAO":"O cliente poderá atualizar todas as datas previstas e realizadas <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":5,"DEFINICAO":"O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":6,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel, <br>"},{"FASE":"PRE-EMBARQUE","JANELA":"PRE-EMBARQUE","ABA":"EVENTOS","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":1,"DEFINICAO":"Sempre que a opção Processo Embarque for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":2,"DEFINICAO":"O usuário deverá digitar os dados de filtro e clicar no botão Consultar.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":3,"DEFINICAO":"Será exibida uma lista com todos os Embarques que obedeçam aos critérios do filtro.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":4,"DEFINICAO":"Caso a consulta não encontre nenhum Embarque que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\".<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":5,"DEFINICAO":"Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados do Embarque escolhido.<br> "},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":6,"DEFINICAO":"Caso a lista contenha apenas 1(um) Embarque, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados do Embarque filtrado.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":7,"DEFINICAO":"O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CONSULTA","ID":8,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"Os atributos serão dinâmicos para Cliente/Tipo de processo<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":2,"DEFINICAO":"Os atributos obrigatórios deverão estar marcados com * <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":3,"DEFINICAO":"Deverá haver um tooltip para informações de preenchimento de cada campo<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":4,"DEFINICAO":"O Botão Salvar deverá persistir os dados na base e as seguintes críticas serão feitas:4.1, 4.2, 4.3, 4.n"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":5,"DEFINICAO":"O botão Novo deverá limpar a tela para uma nova digitação<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":6,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"ATRIBUTOS","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"PROC-ENV","ID":1,"DEFINICAO":"Será exibida uma lista de todos os processos envolvidos com o Embarque<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"PROC-ENV","ID":2,"DEFINICAO":"Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"PROC-ENV","ID":3,"DEFINICAO":"O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Embarque <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"PROC-ENV","ID":4,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"PROC-ENV","ID":5,"DEFINICAO":" O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":1,"DEFINICAO":"Será exibido um formulário com os dados da carga do embarque.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":2,"DEFINICAO":"O campo número do embarque virá preenchido com o embarque corrente<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":3,"DEFINICAO":"O Usuário poderá digitar outro número de Embarque para consultar os dados da Carga<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":4,"DEFINICAO":"Ao clicar no Botão Salvar os dados deverão ser  persistidos na base de dados<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":5,"DEFINICAO":"Ao salvar as seguintes críticas serão realizadas: 5.1, 5.2, 5.3, 5.n <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":6,"DEFINICAO":"O Botão Exportar Dados abaixo do Formulário, deverá fazer um download dos dados de carga no formato Excel. <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"CARGA","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":1,"DEFINICAO":"Será exibida uma lista de todos os eventos do Embarque<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":2,"DEFINICAO":"Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo \"Embarque\" e o Número do processo Embarque.<br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":3,"DEFINICAO":"Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":4,"DEFINICAO":"O cliente poderá atualizar todas as datas previstas e realizadas <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":5,"DEFINICAO":"O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":6,"DEFINICAO":"O botão Exportar dados deverá exportar os dados do Pr-e-Embarque no formato excel, <br>"},{"FASE":"EMBARQUE","JANELA":"EMBARQUE","ABA":"EVENTOS","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":1,"DEFINICAO":"Será solicitado o número do Embarque o qual o cliente deseja consultar os dados de Carga.<br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":2,"DEFINICAO":"O usuário deverá digitar número do Embarque e clicar no botão Consultar.<br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":3,"DEFINICAO":"Será exibida um Formulário com todos os dados de Carga do Embarque Escolhido.<br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":4,"DEFINICAO":"Ao clicar no Botão Salvar os dados deverão ser persistidos na base de dados<br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":5,"DEFINICAO":"Ao salvar as seguintes críticas serão realizadas: 5.1, 5.2, 5.3, 5.n <br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":6,"DEFINICAO":"O Botão Exportar Dados abaixo do Formulário, deverá fazer um download dos dados de carga no formato Excel. <br>"},{"FASE":"EMBARQUE","JANELA":"CARGA","ABA":"CONSULTA","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":1,"DEFINICAO":"Sempre que a opção Gestão da Invoice for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas.<br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":2,"DEFINICAO":"O usuário deverá digitar os dados de filtro e clicar no botão Consultar.<br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":3,"DEFINICAO":"Será exibida uma lista com todas as Invoices que obedeçam aos critérios do filtro.<br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":4,"DEFINICAO":"Caso a consulta não encontre nenhuma Invoice que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\".<br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":5,"DEFINICAO":"Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados da Invoice escolhido.<br> "},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":6,"DEFINICAO":"Caso a lista contenha apenas 1(uma) Invoice, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados da Invoice filtrada.<br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":7,"DEFINICAO":"O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. <br>"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CONSULTA","ID":8,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"ITEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"EVENTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"PROC-ENV","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"CAMBIAL","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"EMBALAGEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"EMBARQUE","JANELA":"INVOICE","ABA":"IMPRESSAO","ID":1,"DEFINICAO":"A definir"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":1,"DEFINICAO":"Será exibida uma Solicitando o Tipo e o Número do processo ao que se deseja consultar os eventos<br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":2,"DEFINICAO":"O cliente deverá digitar o s dados e clicar no botão buscar Eventos <br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":3,"DEFINICAO":"Será exibida uma lista de todos os eventos do Processo digitado<br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":4,"DEFINICAO":"O cliente poderá atualizar todas as datas previstas e realizadas <br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":5,"DEFINICAO":"O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":6,"DEFINICAO":"O botão Exportar dados deverá exportar os dados de evento no formato excel, <br>"},{"FASE":"TODAS","JANELA":"TODAS","ABA":"EVENTOS","ID":7,"DEFINICAO":"O Botão Sair , deverá fechar toda a tela."},{"FASE":"DESEMBARACO","JANELA":"DUIMP","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"DUIMP","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"DUIMP","ABA":"ITEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"DUIMP","ABA":"PROC-ENV","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"FORECAST","ABA":"FORECAST","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"SEFAZ-ICMS","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"NF-ENTRADA","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"NF-ENTRADA","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"NF-ENTRADA","ABA":"ITEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"NF-ENTRADA","ABA":"PROC-ENV","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"PADIM","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"PADIM","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"PADIM","ABA":"ITEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"DESEMBARACO","JANELA":"PADIM","ABA":"PROC-ENV","ID":1,"DEFINICAO":"A definir"},{"FASE":"FINANCEIRO","JANELA":"FINANCEIRO","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"FINANCEIRO","JANELA":"FINANCEIRO","ABA":"ATRIBUTOS","ID":1,"DEFINICAO":"A definir"},{"FASE":"FINANCEIRO","JANELA":"FINANCEIRO","ABA":"ITEM","ID":1,"DEFINICAO":"A definir"},{"FASE":"FINANCEIRO","JANELA":"FINANCEIRO","ABA":"PROC-ENV","ID":1,"DEFINICAO":"A definir"},{"FASE":"CONSULTA","JANELA":"CONSULTA-1","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"CONSULTA","JANELA":"CONSULTA-1","ABA":"DASHBOARD","ID":1,"DEFINICAO":"A definir"},{"FASE":"INTERFACE","JANELA":"INTERFACE-1","ABA":"CONSULTA","ID":1,"DEFINICAO":"A definir"},{"FASE":"INTERFACE","JANELA":"INTERFACE-1","ABA":"DASHBOARD","ID":1,"DEFINICAO":"A Definir"},{"FASE":"PARAMETRIZACAO","JANELA":"FASES","ABA":"FASES","ID":1,"DEFINICAO":"A definir"},{"FASE":"PARAMETRIZACAO","JANELA":"FASES","ABA":"EVENTOS","ID":1,"DEFINICAO":"A definir"}]
+[{
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "Sempre que a opção Pré-Embarque for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 2,
+        "DEFINICAO": "O usuário deverá digitar os dados de filtro e clicar no botão Consultar."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 3,
+        "DEFINICAO": "Será exibida uma lista com todos os Pré-Embarques que obedeçam aos critérios do filtro."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 4,
+        "DEFINICAO": "Caso a consulta não encontre nenhum Pré-embarque que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\"."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 5,
+        "DEFINICAO": "Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados do Pré-embarque escolhido."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 6,
+        "DEFINICAO": "Caso a lista contenha apenas 1(um) Pré-embarque, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados do Pré-Embarque filtrado."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 7,
+        "DEFINICAO": "O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. "
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 8,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "Os atributos serão dinâmicos para Cliente/Tipo de processo"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 2,
+        "DEFINICAO": "Os atributos obrigatórios deverão estar marcados com *"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 3,
+        "DEFINICAO": "Deverá haver um tooltip para informações de preenchimento de cada campo"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 4,
+        "DEFINICAO": "O Botão Salvar deverá persistir os dados na base e as seguintes críticas serão feitas:                4.1, 4.2, 4.3, 4.n "
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 5,
+        "DEFINICAO": "O botão Novo deverá limpar a tela para uma nova digitação"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 6,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel,"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "Será exibida uma lista de todos os processos envolvidos com o Pré-embarque<br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 2,
+        "DEFINICAO": "Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 3,
+        "DEFINICAO": "O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Pré-Embarque <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 4,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel, <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 5,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 1,
+        "DEFINICAO": "Será exibida uma lista de todos os eventos do Pré-embarque<br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 2,
+        "DEFINICAO": "Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo \"Pré-embarque\" e o Número do processo Pré-embarque.<br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 3,
+        "DEFINICAO": "Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 4,
+        "DEFINICAO": "O cliente poderá atualizar todas as datas previstas e realizadas <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 5,
+        "DEFINICAO": "O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 6,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Pre-Embarque no formato excel, <br>"
+    }, {
+        "FASE": "PRE-EMBARQUE",
+        "JANELA": "PRE-EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "Sempre que a opção Processo Embarque for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 2,
+        "DEFINICAO": "O usuário deverá digitar os dados de filtro e clicar no botão Consultar.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 3,
+        "DEFINICAO": "Será exibida uma lista com todos os Embarques que obedeçam aos critérios do filtro.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 4,
+        "DEFINICAO": "Caso a consulta não encontre nenhum Embarque que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\".<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 5,
+        "DEFINICAO": "Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados do Embarque escolhido.<br> "
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 6,
+        "DEFINICAO": "Caso a lista contenha apenas 1(um) Embarque, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados do Embarque filtrado.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 7,
+        "DEFINICAO": "O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CONSULTA",
+        "ID": 8,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "Os atributos serão dinâmicos para Cliente/Tipo de processo<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 2,
+        "DEFINICAO": "Os atributos obrigatórios deverão estar marcados com * <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 3,
+        "DEFINICAO": "Deverá haver um tooltip para informações de preenchimento de cada campo<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 4,
+        "DEFINICAO": "O Botão Salvar deverá persistir os dados na base e as seguintes críticas serão feitas:4.1, 4.2, 4.3, 4.n"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 5,
+        "DEFINICAO": "O botão Novo deverá limpar a tela para uma nova digitação<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 6,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "ATRIBUTOS",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "Será exibida uma lista de todos os processos envolvidos com o Embarque<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 2,
+        "DEFINICAO": "Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 3,
+        "DEFINICAO": "O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Embarque <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 4,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "PROC-ENV",
+        "ID": 5,
+        "DEFINICAO": " O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 1,
+        "DEFINICAO": "Será exibido um formulário com os dados da carga do embarque.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 2,
+        "DEFINICAO": "O campo número do embarque virá preenchido com o embarque corrente<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 3,
+        "DEFINICAO": "O Usuário poderá digitar outro número de Embarque para consultar os dados da Carga<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 4,
+        "DEFINICAO": "Ao clicar no Botão Salvar os dados deverão ser  persistidos na base de dados<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 5,
+        "DEFINICAO": "Ao salvar as seguintes críticas serão realizadas: 5.1, 5.2, 5.3, 5.n <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 6,
+        "DEFINICAO": "O Botão Exportar Dados abaixo do Formulário, deverá fazer um download dos dados de carga no formato Excel. <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "CARGA",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 1,
+        "DEFINICAO": "Será exibida uma lista de todos os eventos do Embarque<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 2,
+        "DEFINICAO": "Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo \"Embarque\" e o Número do processo Embarque.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 3,
+        "DEFINICAO": "Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 4,
+        "DEFINICAO": "O cliente poderá atualizar todas as datas previstas e realizadas <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 5,
+        "DEFINICAO": "O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 6,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados do Pr-e-Embarque no formato excel, <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "EMBARQUE",
+        "ABA": "EVENTOS",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "Será solicitado o número do Embarque o qual o cliente deseja consultar os dados de Carga.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 2,
+        "DEFINICAO": "O usuário deverá digitar número do Embarque e clicar no botão Consultar.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 3,
+        "DEFINICAO": "Será exibida um Formulário com todos os dados de Carga do Embarque Escolhido.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 4,
+        "DEFINICAO": "Ao clicar no Botão Salvar os dados deverão ser persistidos na base de dados<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 5,
+        "DEFINICAO": "Ao salvar as seguintes críticas serão realizadas: 5.1, 5.2, 5.3, 5.n <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 6,
+        "DEFINICAO": "O Botão Exportar Dados abaixo do Formulário, deverá fazer um download dos dados de carga no formato Excel. <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "CARGA",
+        "ABA": "CONSULTA",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "Sempre que a opção Gestão da Invoice for escolhida, a ABA Consulta será aberta e as demais ABAS bloqueadas.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 2,
+        "DEFINICAO": "O usuário deverá digitar os dados de filtro e clicar no botão Consultar.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 3,
+        "DEFINICAO": "Será exibida uma lista com todas as Invoices que obedeçam aos critérios do filtro.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 4,
+        "DEFINICAO": "Caso a consulta não encontre nenhuma Invoice que satisfaça os critérios do filtro, será exibida uma mensagem \"Dados não encotrados\".<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 5,
+        "DEFINICAO": "Ao clicar no botão Editar da lista, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida com os dados da Invoice escolhido.<br> "
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 6,
+        "DEFINICAO": "Caso a lista contenha apenas 1(uma) Invoice, todas as ABAs serão desbloqueadas e a ABA Atributos será exibida automaticamente com os dados da Invoice filtrada.<br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 7,
+        "DEFINICAO": "O Botão Exportar Lista abaixo da lista, deverá fazer um download da lista no formato Excel. <br>"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CONSULTA",
+        "ID": 8,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "ITEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "EVENTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "CAMBIAL",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "EMBALAGEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "EMBARQUE",
+        "JANELA": "INVOICE",
+        "ABA": "IMPRESSAO",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 1,
+        "DEFINICAO": "Será exibida uma Solicitando o Tipo e o Número do processo ao que se deseja consultar os eventos<br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 2,
+        "DEFINICAO": "O cliente deverá digitar o s dados e clicar no botão buscar Eventos <br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 3,
+        "DEFINICAO": "Será exibida uma lista de todos os eventos do Processo digitado<br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 4,
+        "DEFINICAO": "O cliente poderá atualizar todas as datas previstas e realizadas <br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 5,
+        "DEFINICAO": "O clicar no Botão salvar o sistema deverá persistir os dados na base <br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 6,
+        "DEFINICAO": "O botão Exportar dados deverá exportar os dados de evento no formato excel, <br>"
+    }, {
+        "FASE": "TODAS",
+        "JANELA": "TODAS",
+        "ABA": "EVENTOS",
+        "ID": 7,
+        "DEFINICAO": "O Botão Sair , deverá fechar toda a tela."
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "DUIMP",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "DUIMP",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "DUIMP",
+        "ABA": "ITEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "DUIMP",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "FORECAST",
+        "ABA": "FORECAST",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "SEFAZ-ICMS",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "NF-ENTRADA",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "NF-ENTRADA",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "NF-ENTRADA",
+        "ABA": "ITEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "NF-ENTRADA",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "PADIM",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "PADIM",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "PADIM",
+        "ABA": "ITEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "DESEMBARACO",
+        "JANELA": "PADIM",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "FINANCEIRO",
+        "JANELA": "FINANCEIRO",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "FINANCEIRO",
+        "JANELA": "FINANCEIRO",
+        "ABA": "ATRIBUTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "FINANCEIRO",
+        "JANELA": "FINANCEIRO",
+        "ABA": "ITEM",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "FINANCEIRO",
+        "JANELA": "FINANCEIRO",
+        "ABA": "PROC-ENV",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "CONSULTA",
+        "JANELA": "CONSULTA-1",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "CONSULTA",
+        "JANELA": "CONSULTA-1",
+        "ABA": "DASHBOARD",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "INTERFACE",
+        "JANELA": "INTERFACE-1",
+        "ABA": "CONSULTA",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "INTERFACE",
+        "JANELA": "INTERFACE-1",
+        "ABA": "DASHBOARD",
+        "ID": 1,
+        "DEFINICAO": "A Definir"
+    }, {
+        "FASE": "PARAMETRIZACAO",
+        "JANELA": "FASES",
+        "ABA": "FASES",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }, {
+        "FASE": "PARAMETRIZACAO",
+        "JANELA": "FASES",
+        "ABA": "EVENTOS",
+        "ID": 1,
+        "DEFINICAO": "A definir"
+    }
+]

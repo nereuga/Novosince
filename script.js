@@ -11,7 +11,6 @@ function loadContent(page) {
         .then(response => response.text())
         .then(html => {
             document.getElementById('mainContent').innerHTML = html;
-             setupBackButton();
             //document.getElementById('pictureButtonsContainer').style.display = 'none';
         })
         .catch(error => {
@@ -25,28 +24,6 @@ function loadContent(page) {
         });
 }
 
-// Função separada para configurar o botão de voltar
-function setupBackButton() {
-    const previousPage = sessionStorage.getItem('previousPage');
-    const backButtons = document.querySelectorAll('.btn-retornar'); // Seleciona TODOS os botões com essa classe
-    const selectButtons = document.querySelectorAll('.btn-selecionar');// Seleciona TODOS os botões com essa classe
-
-    if (backButtons.length && previousPage) {
-        backButtons.forEach(button => {
-            button.onclick = function() {
-                loadContent(previousPage); // Ou `window.location.href = previousPage;` se preferir recarregar a página
-            };
-        });
-    }
-    if (selectButtons.length && previousPage) {
-        selectButtons.forEach(button => {
-            button.onclick = function() {
-                loadContent(previousPage); // Ou `window.location.href = previousPage;` se preferir recarregar a página
-            };
-        });
-    }
-
-}
 
 // Função para exibir picture buttons
 function showPictureButtonsFases() {
@@ -129,7 +106,7 @@ window.loadJsonData = async function(fase,janela,aba) {
             container.innerHTML = '<p>Nenhum dado correspondente aos filtros.</p>';
             return;
         }
-
+        
         // Cria um parágrafo para cada item filtrado
         itensFiltrados.forEach(item => {
             const p = document.createElement('p');
@@ -138,34 +115,4 @@ window.loadJsonData = async function(fase,janela,aba) {
             p.textContent = `${item.ID} - ${item.DEFINICAO}`;
             container.appendChild(p);
         });
-        
-        const divElement = document.createElement('div');
-
-        const inputButton = document.createElement('input');
-        inputButton.type = 'button';
-        inputButton.value = 'Fechar Definição';
-        
-        inputButton.addEventListener('click', () => {
-            limparContainer(container);
-        });
-        
-        divElement.appendChild(inputButton);
-        container.appendChild(divElement);
-
-        
-
     };
-
-    function limparContainer(container) {
-        container.innerHTML = ''; // Remove todo o conteúdo
-        // Alternativa: container.textContent = '';
-    };
-
-    
-    function goToJanela(janela1,janela2) {
-            sessionStorage.setItem('previousPage', janela1);
-            //window.location.href = janela2;
-            loadContent(janela2);
-    };
-    
-    

@@ -172,13 +172,11 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <!--<li class="tab active" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','EMBARQUE','ATRIBUTOS')">Criar processo</li>-->
-            <li class="tab active" data-tab="tab1" >Embarque</li>
-            <!--<li class="tab" data-tab="tab4" >Carga</li>
-            <li class="tab" data-tab="tab5" onclick="loadContent('Embarque_inv.html')" >Invoice</li>
-            <li class="tab" data-tab="tab3" >Processos Envolvidos</li>-->
-           
-           
+            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')">Consulta</li>
+            <li class="tab" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','EMBARQUE','ATRIBUTOS')">Atributos</li>
+            <li class="tab" data-tab="tab3"  onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')">Processos Envolvidos</li>
+            <li class="tab" data-tab="tab4"  onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')">Dados da Carga</li>
+            <li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')">Eventos</li>
         </ul>
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
@@ -186,116 +184,53 @@ th, td {
         </div>
         
         <div id="tab1" class="tab-content active">
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;"/>
-            </div>
-            <h1 align="center">Embarques</h1>
+           
+            <h1 align="center">Consulta Atributos de Embarques</h1>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
                     
                     <div class="card-header" align="left">
-                        
-                        <fieldset class="periodo-fieldset">
-                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">PERÍODO de / até</label>
-                            <div class="periodo-inputs">
-                                <input id="dataInicio" name="dataInicio" class="periodo-input" type="date">
-                                <input id="dataFim" name="dataFim" class="periodo-input" type="date">
-                            </div>
+                        <fieldset>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
                         </fieldset>
-
-                        <fieldset class="periodo-fieldset">
-                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF.PRE-EMBARQUE</label>
-                            <div class="periodo-inputs">
-                                <input width="50%" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('Embarque.html','busca_processo.html')" style="margin-right: 5px;"/>
-                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
-                            </div>
+                        <fieldset>
+                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">DATA EMBARQUE</label>
+                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="date"  >
                         </fieldset>
                     
-                        <fieldset class="periodo-fieldset">
-                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF.EMBARQUE</label>
-                            <div class="periodo-inputs">
-                                <input width="9" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('Embarque.html','busca_processo.html')" style="margin-right: 5px;"/>
-                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
-                            </div>
+                        <fieldset>
+                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">REGIME</label>
+                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" value="Lista da tabela...">
                         </fieldset>
-                    
-                         <fieldset class="select-fieldset">
-                            <label id="labelidcomex" for="idcomex" class="select-label">MODAL</label>
-                            <select id="idcomex" name="idcomex" class="full-width-select">
-                                <option value="">Selecione uma opção</option>
-                                <option value="opcao1">AEREO</option>
-                                <option value="opcao2">MARITIMO</option>
-                                <option value="opcao3">FERROVIARIO</option>
-                                <option value="opcao4">RODOVIARIO</option>
-                            </select>
+                        <fieldset>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">MODAL</label>
+                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" value="Lista da tabela...">
                         </fieldset>
-                        
-                        
-                       
                     </div>
                     <div class="card-header" align="left">
-                                              
-                       <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:rgb(14, 12, 12)"
-                                align="left">REGIME</label>
-                            <select style="font-size: 130%; color: black" id="idcomex" name="idcomex"
-                                class="row-content">
-                                <option value="">Selecione uma opção</option>
-                                <option value="opcao1">4 - IMPORTAÇÃO DE BENS PARA INDUSTRIALIZAÇÃO</option>
-                                <option value="opcao1">8 - NF COMPLEMENTAR IMPORTAÇÃO BENS PARA INDUSTRIALIZAÇÃO
-                                </option>
-                                <option value="opcao1">9 - IMPORTAÇÃO DE BENS PARA COMERCIALIZAÇÃO</option>
-                                <option value="opcao1">10 - IMPORTAÇÃO VIA COURIER - REVENDA</option>
-                                <option value="opcao1">11 - NF COMPLEMENTAR IMPORTAÇÃO PARA REVENDA</option>
-                                <option value="opcao1">12 - IMPORTAÇÃO EM DRAWBACK</option>
-                                <option value="opcao1">13 - DEVOLUÇÃO DE VENDA PRODUÇÃO ESTABELECIMENTO</option>
-                                <option value="opcao1">14 - DEVOLUÇÃO DE VENDA DE MERCADORIA REC. TERCEIROS</option>
-                                <option value="opcao1">15 - DEVOLUÇÃO DE VENDA REGIME DRAWBACK</option>
-                                <option value="opcao1">16 - IMPORTAÇÃO ATIVO FIXO</option>
-                                <option value="opcao1">17 - NACIONALIZAÇÃO DE TEMPORÁRIO (REPETRO/ADMISSÃO)</option>
-                                <option value="opcao1">18 - NF COMPLEMENTAR DE ATIVO</option>
-                                <option value="opcao1">19 - DEVOLUÇÃO DE ATIVO FIXO</option>
-                                <option value="opcao1">20 - COMPRA DE USO/CONSUMO P/ OPERAÇÃO</option>
-                                <option value="opcao1">21 - COMPRA DE USO/CONSUMO</option>
-                                <option value="opcao1">22 - IMPORTAÇÃO VIA COURRIER - USO/CONSUMO</option>
-                                <option value="opcao1">23 - NF COMPLEMENTAR DE COMPRA DE USO E CONSUMO</option>
-                                <option value="opcao1">47 - IMPORTAÇÃO DE TEMPORÁRIO</option>
-                                <option value="opcao1">57 - RENOVACAO DE TEMPORARIO</option>
-                                <option value="opcao1">67 - IMPORTAÇÃO DE AMOSTRA</option>
-                                <option value="opcao1">68 - IMPORTAÇÃO SEM COBERTURA CAMBIAL</option>
-                                <option value="opcao1">69 - RETORNO DE BEM ENVIADO PARA REPARO</option>
-                                <option value="opcao1">70 - IMPORTAÇÃO NF-E FILHOTE</option>
-                                <option value="opcao1">71 - RETORNO DE EXPORTAÇÃO TEMPORÁRIA</option>
-                                <option value="opcao1">72 - IMPORTAÇÃO DE SUCATA</option>
-                                <option value="opcao1">73 - IMPORTAÇÃO BEM GARANTIA</option>
-                                <option value="opcao1">74 - EXPORTACAO TEMPORARIA REPARO ADM TEMPORARIA</option>
-                                <option value="opcao1">75 - EXPORTACAO TEMPORARIA MATERIAL NACIONAL</option>
-                                <option value="opcao1">76 - REEXPORTACAO - RETURN TEMPORARY ADMISSION </option>
-                                <option value="opcao1">77 - EXPORTACAO DEFINITIVA COM COBERTURA CAMBIAL</option>
-                                <option value="opcao1">78 - EXPORTACAO DEFINITIVA SEM COBERTURA CAMBIAL</option>
-                                <option value="opcao1">79 - EXPORTACAO TEMPORARIA PARA SERVIÇOS</option>
-                                <option value="opcao1">80 - EXPORTACOES CONSOLIDADAS</option>
-                            </select>
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 7, 7)" align="left">RESPONSÁVEL</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
+                        </fieldset>
+                    
+                        <fieldset>
+                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
+                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 12, 12)" align="left">CAMPO_CUSTOMIZAVEL</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
+                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
+                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
-                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 12, 12)" align="left">CAMPO_CUSTOMIZAVEL</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content"  type="text" >
-                        </fieldset>
-                       
                     </div>
                     <div align="center">
-                        <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
-                        <input width="8" type="button" class="btn-realnovo" value="Novo Embarque" onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+                        <input width="8" type="button" class="btn-primary" value="Consultar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Limpar filtro" onclick="callAtributo()" />
                     </div>
                 </div>
             </div>
@@ -309,18 +244,18 @@ th, td {
                             <thead>
                                 <tr>
                                     <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">PRE-EMBARQUE</th>
-                                    <th align="center" bgcolor="Grey">EMBARQUE</th>
-                                    <th align="center" bgcolor="Grey">NUM. BOOKING</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
+                                    <th align="center" bgcolor="Grey">NUMERO DO EMBARQUE</th>
+                                    <th align="center" bgcolor="Grey">DATA</th>
                                     <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">RESPONSÁVEL</th>
+                                    <th align="center" bgcolor="Grey">MODAL</th>
+                                    <th align="center" bgcolor="Grey">AGENTE</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Embarque_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
@@ -343,7 +278,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Embarque_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -366,7 +301,7 @@ th, td {
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
                                     <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Embarque_atr.html')"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
                                         <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
@@ -391,18 +326,17 @@ th, td {
                         </table>
                     </div>
                 </div>
-               
-            </div>
-            <div align="center">
-                <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
+                <div align="center">
+                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                </div>
             </div>
         </div>
     
         
         <div id="tab2" class="tab-content">
            
-            <h1 align="center">Atributos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="center">Atributos do Embarque ...</h1>
             <div>
                 
                 <div class="card">
@@ -464,13 +398,12 @@ th, td {
                             <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
                         </fieldset>
                     </div>
-                   
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
-                    <input width="8" type="button" class="btn-realnovo" value="Novo " onclick="callAtributo()" style="margin-right: 5px;"/>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-primary" value="Novo " onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Exportar dados" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                    </div>
                 </div>
             </div>   
         </div>
@@ -478,13 +411,8 @@ th, td {
        
         <div id="tab3" class="tab-content">
             <div>
-                <div align="left">
-                    <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque.html')" style="margin-right: 5px;"/>
-                </div>
-                <div align="right">
-                    <input width="8" type="button" class="btn-definicao" value="Definição"    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;"/>
-                </div>
-                <h1>Processos Envolvidos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+               
+                <h1>Processos Envolvidos Embarque...</h1>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
@@ -544,24 +472,17 @@ th, td {
                         </table>
                     </div>
                 </div>
-               
-            </div>
-            <div align="center">
-                <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 50px;"/>-->
+                <div align="center">
+                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                </div>
             </div>
            
         </div>
 
         <div id="tab4" class="tab-content">
-            <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque.html')" style="margin-right: 5px;"/>
-            </div>
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')" style="margin-right: 5px;"/>
-            </div>
            
-            <h1 align="center">Dados da carga do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="center">Dados da carga do Embarque</h1>
             <div>
                 <div class="card">
                     
@@ -572,11 +493,10 @@ th, td {
                         </fieldset>
                     </div>
                     
-                    
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 50px;"/>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-primary" value="Consultar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Limpar filtro" onclick="callAtributo()" />
+                    </div>
                 </div>
             </div>
         
@@ -622,142 +542,131 @@ th, td {
                         </fieldset>
                     </div>
                     
-                    
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
+                    <div align="center">
+                        <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                    </div>
                 </div>
             </div>
             
         </div>
 
         <div id="tab5" class="tab-content">
-            <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque.html')" style="margin-right: 5px;"/>
-            </div>
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
-            </div>
-            <h1 align="center">Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
             <div>
-                <h2>Filtro de busca</h2>
-                <div class="card">
+               
+                <h1>Eventos do ...</h1>
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">Tipo de PROCESSO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Lista Estática-  Dropdown" >
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO PROCESSO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
+                    </fieldset>
                     
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO EMBARQUE</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
-                   
-                    
+                    <div align="left">
+                        <input width="8" type="button" class="btn-primary" value="Busca Eventos" onclick="callAtributo()" />
+                    </div> 
                 </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
-                </div>
-            </div>
-        
-            <br><br><br><br>
-            <div>
-                <h2>Lista de Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DA INVOICE</th>
-                                    <th align="center" bgcolor="Grey">ABERTURA</th>
-                                    <th align="center" bgcolor="Grey">REGIME</th>
-                                    <th align="center" bgcolor="Grey">MODAL</th>
-                                    <th align="center" bgcolor="Grey">AGENTE</th>
-                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
+                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
+                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Recebimento da Invoice" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Da tabela...</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Booking da Carga" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                                 <tr class="table-info" style="height:25px;">
-                                    <td class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Agendamento de Transporte" >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
                                     <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Conferência de Documentos de Embarque" >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-5</div>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
-                                    <td align="center" bgcolor="WhiteSmoke">
-                                        <div style="width: 100px;">Campo-6</div>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Envio de Documentos de Instrução RFB ao Despachante" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Preparação e Revisão do Catálogo de Produtos" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Eventos CUSTOMIZADOS" >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                
-            </div>
-            <div align="center">
-                <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />
-                <!--<input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
-                <input width="20" type="button" class="btn-realnovo" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
-               
+                <div align="center">
+                    <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                </div>
             </div>
         </div>
     </div>
