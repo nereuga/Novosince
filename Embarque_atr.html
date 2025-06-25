@@ -186,6 +186,14 @@
 </head>
 
 <body>
+    <div align="left">
+        <input width="8" type="button" class="btn-voltar" value="Voltar" onclick="loadContent('Embarque.html')"
+            style="margin-right: 5px;" />
+    </div>
+    <div align="right">
+        <input width="8" type="button" class="btn-definicao" value="Definição"
+            onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
+    </div>
     <div class="tab-container">
         <ul class="tabs">
             <!--<li class="tab active" data-tab="tab1" >Embarque</li> -->
@@ -206,7 +214,7 @@
                 <input width="8" type="button" class="btn-definicao" value="Definição"
                     onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;" />
             </div>
-            <h1 align="center">Embarques</h1>
+            <h1 align="left" style="color:maroon">EMBARQUE - Atributos</h1><br><br>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
@@ -388,16 +396,8 @@
 
 
         <div id="tab2" class="tab-content active">
-            <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar" onclick="loadContent('Embarque.html')"
-                    style="margin-right: 5px;" />
-            </div>
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"
-                    onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
-            </div>
 
-            <h1 align="center">Atributos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+            <h1 align="left" style="color:maroon">EMBARQUE - Atributos</h1><br><br>
             <div>
 
                 <div class="card">
@@ -483,10 +483,16 @@
                             </select>
                         </fieldset>
                         <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:rgb(14, 12, 12)"
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:rgb(14, 12, 12)"
                                 align="left">RESPONSÁVEL</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                class="row-content" type="text">
+                            <select style="font-size: 130%; color: black" id="idcomex" name="idcomex"
+                                class="row-content">
+                                <option value="">Selecione uma opção</option>
+                                <option value="opcao1">MARCOS</option>
+                                <option value="opcao2">JOÃO</option>
+                                <option value="opcao3">CARDOSO</option>
+                                <option value="opcao3">WILIAM</option>
+                            </select>
                         </fieldset>
 
                         <fieldset>
@@ -535,8 +541,8 @@
 
                     <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
                         style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
-                        style="margin-right: 5px;" />
+                    <!--<input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
+                        style="margin-right: 5px;" />-->
                     <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
                     <input width="8" type="button" class="btn-realnovo" value="Novo Embarque " onclick="callAtributo()"
                         style="margin-right: 5px;" />
@@ -665,7 +671,7 @@
                 <div align="center">
                     <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
                         style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
+                    <input width="8" type="button" class="btn-realistic" value="Exportar Dados" onclick="callAtributo()"
                         style="margin-right: 5px;" />
                     <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />-->
                 </div>
@@ -675,15 +681,8 @@
 
         <div id="tab3" class="tab-content">
             <div>
-                <div align="left">
-                    <input width="8" type="button" class="btn-voltar" value="Voltar"
-                        onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;" />
-                </div>
-                <div align="right">
-                    <input width="8" type="button" class="btn-definicao" value="Definição"
-                        onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
-                </div>
-                <h1>Processos Envolvidos do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+               
+                <h1 align="left" style="color:maroon">EMBARQUE - Processos Envolvidos</h1><br><br>
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">
                         <table>
@@ -762,7 +761,7 @@
 
             </div>
             <div align="center">
-                <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
+                <input width="8" type="button" class="btn-realistic" value="Exportar Dados" onclick="callAtributo()"
                     style="margin-right: 5px;" />
                 <!--<input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 50px;"/>-->
             </div>
@@ -770,16 +769,8 @@
         </div>
 
         <div id="tab4" class="tab-content">
-            <div align="left">
-                <input width="8" type="button" class="btn-voltar" value="Voltar"
-                    onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;" />
-            </div>
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"
-                    onclick="loadJsonData('EMBARQUE','EMBARQUE','CARGA')" style="margin-right: 5px;" />
-            </div>
-
-            <h1 align="center">Dados da carga do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+           
+            <h1 align="left" style="color:maroon">EMBARQUE - Dados da Carga</h1><br><br>
             <div align="left">
                 <form>
                     <label for="arquivo" style="font-size:25px;color:maroon">Upload Dados da carga:</label>
@@ -810,8 +801,8 @@
                                 class="row-content" type="text" value="Texto livre">
                         </fieldset>
                         <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon"
-                                align="left">* MODAL</label>
+                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">*
+                                MODAL</label>
                             <select style="font-size: 130%; color: black" id="idcomex" name="idcomex"
                                 class="row-content">
                                 <option value="">Selecione uma opção</option>
@@ -891,15 +882,8 @@
     </div>
 
     <div id="tab5" class="tab-content">
-        <div align="left">
-            <input width="8" type="button" class="btn-voltar" value="Voltar" onclick="loadContent('Embarque_atr.html')"
-                style="margin-right: 5px;" />
-        </div>
-        <div align="right">
-            <input width="8" type="button" class="btn-definicao" value="Definição"
-                onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;" />
-        </div>
-        <h1 align="center">Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h1>
+       
+       <h1 align="left" style="color:maroon">EMBARQUE - Invoices</h1><br><br>
         <div>
             <h2>Filtro de busca</h2>
             <div class="card">

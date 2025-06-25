@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBARQUE</title>
+
+    <style>
+        /* Estilos das abas */
+        .tabs {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .tab {
+            position: relative;
+            padding: 12px 20px;
+            margin-right: 5px;
+            background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            z-index: 1;
+            transition: all 0.2s ease;
+        }
+
+        .tab:hover {
+            background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
+        }
+
+        .tab.active {
+            background: #fff;
+            color: #333;
+            z-index: 3;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0 5px 5px 5px;
+            background: #fff;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Efeito 3D opcional */
+        .tab.active:before,
+        .tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+        }
+
+        .tab.active:before {
+            left: -6px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 0 0 0 #fff;
+        }
+
+        .tab.active:after {
+            right: -6px;
+            border-bottom-left-radius: 5px;
+            box-shadow: -3px 0 0 0 #fff;
+        }
+
+        /* Estilize o card */
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin: 20px;
+        }
+
+        /* Estilize o cabeçalho do card */
+        .card-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
+
+        .card-button {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
+
+        .card-button4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
+
+        .card-button2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
+
+        /* Botão primário */
+        .btn-primary {
+            background-color: #4361ee;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a56d4;
+        }
+
+        /*Estilos para tabelas*/
+        .heading {
+            display: flex;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: separate;
+            border-spacing: 0px;
+            min-width: 50%;
+            font-size: medium;
+            width: 90%;
+            /* float: right;*/
+        }
+
+        th {
+            position: sticky;
+            top: 0px;
+            color: White;
+        }
+
+        .table-wrapper {
+            max-height: 800px;
+            max-width: 2300%;
+            overflow: scroll;
+            margin: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            height: max-content;
+            width: auto;
+        }
+
+        .outer-wrapper {
+            border: 1px solid black;
+            box-shadow: 0px 0px 3px black;
+            margin: 28px;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div align="left">
+        <input width="8" type="button" class="btn-voltar" value="Voltar" onclick="loadContent('Desemb_padim_atr.html')"
+            style="margin-right: 5px;" />
+    </div>
+    <div align="right">
+        <input width="8" type="button" class="btn-definicao" value="Definição"
+            onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
+    </div>
+    <div class="tab-container">
+        <ul class="tabs">
+            <li class="tab active" data-tab="tab1">Atributos Técnicos</li>
+            <li class="tab" data-tab="tab2">Cambial</li>
+            <li class="tab" data-tab="tab3">Orgãos Anuentes </li>
+            <li class="tab" data-tab="tab4">Op. Estrangeiro </li>
+            <li class="tab" data-tab="tab5">Tributos</li>
+        </ul>
+        <div class="conteudo-dinamico" id="conteudoJson">
+            <!-- Os parágrafos serão inseridos aqui via JavaScript -->
+            <p>Carregando conteúdo...</p>
+        </div>
+
+        <div>
+            <div class="card">
+
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">NUMERO DUIMP</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">REFERENCIA EMBARQUE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CODIGO ITEM CLIENTE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CÓDIGO ITEM PUCOMEX </label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <!-- <div class="card-header" align="left">
+                    <fieldset style="grid-column: 1 / -1;">
+                        <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon"
+                            align="left">DENOMINAÇÃO</label>
+                        <textarea
+                            style="font-size: 130%; color: black; width: 100%; box-sizing: border-box; resize: both;"
+                            id="modalidade" name="modalidade" class="row-content" rows="3"
+                            disabled>Denominação do item</textarea>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+                    <fieldset style="grid-column: 1 / -1;">
+                        <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon"
+                            align="left">DETALHAMENTO</label>
+                        <textarea
+                            style="font-size: 130%; color: black; width: 100%; box-sizing: border-box; resize: both;"
+                            id="modalidade" name="modalidade" class="row-content" rows="3"
+                            disabled>Detalhamento do Item</textarea>
+                    </fieldset>
+                </div>-->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="tab1" class="tab-content active">
+        <div>
+            <h1 align="left" style="color:maroon"> PRODUTO - Atributos Técnicos</h1><br>
+
+            <div class="outer-wrapper" align="center">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center" bgcolor="Grey">EDITAR</th>
+                                <th align="center" bgcolor="Grey">NCM</th>
+                                <th align="center" bgcolor="Grey">CODIGO ATRIBUTO</th>
+                                <th align="center" bgcolor="Grey">NOME ATRIBUTO</th>
+                                <th align="center" bgcolor="Grey">VALOR ATRIBUTO</th>
+                                <th align="center" bgcolor="Grey">ATRIBUTOS CONDICIONADOS</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">ATT_1010</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">AERONAUTICO</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="ncm">SIM</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;">ATT_1011,ATT_1012,ATT_1013</div>
+                                </td>
+
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">ATT_1012</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">FAA</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="ncm">FTJU-09876Y665</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;">N/A</div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">ATT_1013</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">ISO</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="ncm">76688999</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;">N/A</div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">ATT_1025</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">MARCA</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="ncm">PWA</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;">N/A</div>
+                                </td>
+
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">ATT_1031</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">COMPOSIÇÃO</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="ncm">ALUMINUO</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;">N/A</div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <div>
+            <h1 align="left" style="color:maroon">PRODUTO - Dados Cambiais</h1><br>
+
+            <div class="card">
+
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CONDIÇÃO VENDA</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">INCOTERMS</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">MOEDA NEGOCIADA</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR MOEDA NEGOCIADA</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">TAXA CONVERSAO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR EM REAL</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR EM DOLLAR</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CUSTOMIZADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">MOEDA FRETE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR FRETE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">TAXA CONVERSAO FRETE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR EM REAL FRETE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">MOEDA SEGURO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR SEGURO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">TX.CONVERSAO SEGURO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR EM REAL SEGURO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VALOR DOLAR</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">FRETE DOLAR</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">SEGURO DOLAR</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">TX.CONVERSAO INCOTERM</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+                <div class="card-header" align="left">
+
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">COBERTURA CAMBIAL</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CUSTOMIZADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CUSTOMIZADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div align="center">
+                <input width="8" type="button" class="btn-realistic" value="  Exporta dados   "
+                    onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;" />
+
+            </div>
+        </div>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <div>
+            <h1 align="left" style="color:maroon">PRODUTO - Orgãos Anuentes</h1><br>
+
+            <div class="outer-wrapper" align="center">
+                <h2 align="center">LPCO</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center" bgcolor="Grey">EDITAR</th>
+                                <th align="center" bgcolor="Grey">ORGÃO</th>
+                                <th align="center" bgcolor="Grey">NOME LPCO</th>
+                                <th align="center" bgcolor="Grey">NUMERO LPCO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="outer-wrapper" align="center">
+                <h2 align="center">DECLARAÇÕES VINCULADAS</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center" bgcolor="Grey">EDITAR</th>
+                                <th align="center" bgcolor="Grey">TIPO</th>
+                                <th align="center" bgcolor="Grey">NÚMERO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div align="center">
+                <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
+                <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="tab4" class="tab-content">
+        <div>
+            <h1 align="left" style="color:maroon">PRODUTO - Operadores Estrangeiros</h1><br>
+            <div class="card">
+
+                <div class="card-header" align="left">
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">RELAÇÃO EXPORTADOR / FABRICANTE</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">VINCULAÇÃO COMPRADOR / EXPORTADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CUSTOMIZADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                    <fieldset>
+                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                            align="left">CUSTOMIZADO</label>
+                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                            class="row-content" type="text" disabled>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div class="outer-wrapper" align="center">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center" bgcolor="Grey">EDITAR</th>
+                                <th align="center" bgcolor="Grey">TIPO OPERADOR</th>
+                                <th align="center" bgcolor="Grey">TIN-NOME OPERADOR</th>
+                                <th align="center" bgcolor="Grey">FABRICANTE</th>
+                                <th align="center" bgcolor="Grey">PAÍS AQUISIÇÃO (EXP)</th>
+                                <th align="center" bgcolor="Grey">PAÍS ORIGEM (FABR)</th>
+                                <th align="center" bgcolor="Grey">ENDEREÇO</th>
+                                <th align="center" bgcolor="Grey">VERSÃO RFB</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="table-info" style="height:25px;">
+                                <td class="list-inline-item">
+                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
+                                        data-placement="top" title="Edit" onclick="loadContent('Desemb_doc.html')"><i
+                                            class="fa fa-edit"></i></button>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                    <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+                                <td align="center" bgcolor="WhiteSmoke">
+                                    <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab5" class="tab-content">
+        <div>
+            <h1 align="left" style="color:maroon">PRODUTO - Tributos</h1><br>
+
+            <div class="tab-container">
+                <ul class="tabs">
+                    <li class="tab active" data-tab="tab55">Tributos</li>
+                    <li class="tab" data-tab="tab56">Info. Contratual</li>
+                </ul>
+
+                <div id="tab55" class="tab-content active">
+                    <h2 align="center">Tributos</h2>
+                    <div class="card">
+
+                        <div class="card-header" align="left">
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">TOTAL REAL LOCAL
+                                    EMBARQUE(FOB)</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">TOTAL REAL
+                                    ADUANEIRO</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">CUSTOMIZADO</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">CUSTOMIZADO</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="outer-wrapper" align="center">
+                        <h2 align="center">Tabela de tributação</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th align="center" bgcolor="Grey">EDITAR</th>
+                                        <th align="center" bgcolor="Grey">TRIBUTO</th>
+                                        <th align="center" bgcolor="Grey">REGIME</th>
+                                        <th align="center" bgcolor="Grey">FUNDAMENTAÇÃO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="outer-wrapper" align="center">
+                        <h2 align="center">Tabela de Impostos</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th align="center" bgcolor="Grey">EDITAR</th>
+                                        <th align="center" bgcolor="Grey">TIPO</th>
+                                        <th align="center" bgcolor="Grey">FUNDAMENTAÇÃO LEGAL</th>
+                                        <th align="center" bgcolor="Grey">BASE CALCULO</th>
+                                        <th align="center" bgcolor="Grey">TIPO ALIQUOTA</th>
+                                        <th align="center" bgcolor="Grey">ALIQUOTA</th>
+                                        <th align="center" bgcolor="Grey">VALOR CALCULADO</th>
+                                        <th align="center" bgcolor="Grey">VALOR DEVIDO</th>
+                                        <th align="center" bgcolor="Grey">VALOR A RECOLHER</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td class="list-inline-item">
+                                            <button class="btn btn-success btn-sm rounded-0" type="button"
+                                                data-toggle="tooltip" data-placement="top" title="Edit"
+                                                onclick="loadContent('Desemb_doc.html')"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <div style="width: 100px;" id="codigosiscomex">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke">
+                                            <div style="width: 100px;" id="codigosinterno">Da tabela...
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
+                            style="margin-right: 5px;" />
+                        <input width="8" type="button" class="btn-realistic" value="Exportar dados"
+                            onclick="callAtributo()" style="margin-right: 5px;" />
+                    </div>
+                </div>
+
+                <div id="tab56" class="tab-content">
+                    <h2 align="center">DOCUMENTOS</h2>
+                    <div class="card">
+
+                        <div class="card-header" align="left">
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">VARIA CONFORME
+                                    REGIME</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">VARIA CONFORME
+                                    REGIME</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">VARIA CONFORME
+                                    REGIME</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">CUSTOMIZADO</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
+                            style="margin-right: 5px;" />
+                        <input width="8" type="button" class="btn-realistic" value="Exportar dados"
+                            onclick="callAtributo()" style="margin-right: 5px;" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <script>
+
+        // Função principal para abrir abas
+        function openTab(tabId) {
+            // Remove a classe active de todas as abas e conteúdos
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Adiciona a classe active na aba e conteúdo correspondentes
+            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Adiciona os event listeners para as abas
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+                    openTab(tabId);
+                });
+            });
+
+            // Opcional: pode definir uma aba padrão aqui
+            // openTab('tab1');
+        });
+
+        /*
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove a classe active de todas as abas e conteúdos
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Adiciona a classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostra o conteúdo correspondente
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+ 
+        function changeTab(tabId) {
+        // Remove a classe 'active' de todas as abas
+        document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+        });
+    
+        // Adiciona a classe 'active' apenas na aba desejada
+        document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+    
+        // Esconde todos os conteúdos das abas
+        document.querySelectorAll('.tab-content').forEach(content => {
+        content.style.display = 'none';
+        });
+    
+        // Mostra apenas o conteúdo da aba desejada
+        document.getElementById(tabId).style.display = 'block';
+        }
+        */
+
+    </script>
+</body>
+
+</html>

@@ -172,8 +172,8 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1" onclick="loadJsonData('DESEMBARACO','FORECAST','FORECAST')">Consulta</li>
-            <!--<li class="tab" data-tab="tab2">Atributos</li>-->
+            <li class="tab active" data-tab="tab1">Sintético</li>
+            <li class="tab" data-tab="tab2">Analítico</li>
             <!--<li class="tab" data-tab="tab3">Processos Envolvidos</li> -->
             <!--<li class="tab" data-tab="tab4">Eventos</li> -->
         </ul>
@@ -185,7 +185,7 @@ th, td {
         
         <div id="tab1" class="tab-content active">
            
-            <h1 align="center">Forecast</h1>
+            <h1 align="center">Forecast Sintético</h1>
             <div>
                 <div class="card">
                     
@@ -275,16 +275,7 @@ th, td {
     
         
         <div id="tab2" class="tab-content">
-            <p class="definicao">DEFINIÇÕES: <br>    
-                1- Os atributos serão dinâmicos para Cliente/Tipo de processo<br>
-                2- Os atributos obrigatórios deverão estar marcados com * <br>
-                3- Deverá haver um tooltip para informações de preenchimento de cada campo<br>
-                4- O Botão Salvar deverá persistir os dados na base e as seguintes críticas serão feitas:<br>
-                4.1, 4.2, 4.3, 4.n <br>
-                5- O botão Novo deverá limpar a tela para uma nova digitação<br>
-                6- O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>
-                7- O Botão Sair , deverá fechar toda a tela.</p> 
-            <h1 align="center">Atributos do Embarque ...</h1>
+            <h1 align="center">Forcast Analítico ...</h1>
             <div>
                 
                 <div class="card">
@@ -355,210 +346,7 @@ th, td {
                 </div>
             </div>   
         </div>
-        
-       
-        <div id="tab3" class="tab-content">
-            <div>
-                <p class="definicao">DEFINIÇÕES: <br>    
-                    1- Será exibida uma lista de todos os processos envolvidos com o Embarque<br>
-                    2- Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>
-                    3- O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Embarque <br>
-                    4- O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>
-                    5- O Botão Sair , deverá fechar toda a tela.
-                    </p> 
-                <h1>Processos Envolvidos Embarque...</h1>
-                <div class="outer-wrapper" align="center">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">TIPO DE PROCESSO</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DO PROCESSO</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
-                </div>
-            </div>
-           
-        </div>
-
-        <div id="tab4" class="tab-content">
-            <div>
-                <p class="definicao">DEFINIÇÕES: <br>    
-                    1- Será exibida uma lista de todos os eventos do Embarque<br>
-                    2- Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo "Embarque" e o Número do processo Embarque.<br>
-                    3- Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos
-                    4- O cliente poderá atualizar todas as datas previstas e realizadas <br>
-                    5- O clicar no Botão salvar o sistema deverá persistir os dados na base <br>
-                    6- O botão Exportar dados deverá exportar os dados do Pr-e-Embarque no formato excel, <br>
-                    7- O Botão Sair , deverá fechar toda a tela.
-                    </p> 
-                <h1>Eventos do ...</h1>
-                <div class="card-header" align="left">
-                    <fieldset>
-                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">Tipo de PROCESSO</label>
-                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Lista Estática-  Dropdown" >
-                    </fieldset>
-                    <fieldset>
-                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO PROCESSO</label>
-                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
-                    </fieldset>
-                    
-                    <div align="left">
-                        <input width="8" type="button" class="btn-primary" value="Busca Eventos" onclick="callAtributo()" />
-                    </div> 
-                </div>
-                <div class="outer-wrapper" align="center">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
-                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
-                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Recebimento da Invoice" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Booking da Carga" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Agendamento de Transporte" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Conferência de Documentos de Embarque" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Envio de Documentos de Instrução RFB ao Despachante" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Preparação e Revisão do Catálogo de Produtos" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Eventos CUSTOMIZADOS" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
-                </div>
-            </div>
-        </div>
+            
     </div>
 
     <script>

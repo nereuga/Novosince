@@ -39,7 +39,8 @@ body {
 }
 
 /* Estilos para o menu em árvore */
-.tree-menu, .submenu {
+.tree-menu,
+.submenu {
     list-style-type: none;
     padding-left: 20px;
 }
@@ -57,6 +58,7 @@ body {
 .menu-item:hover {
     background-color: #3d566e;
 }
+
 .submenu-item {
     color: #100f1b;
     cursor: pointer;
@@ -66,6 +68,7 @@ body {
     background-color: #90999b;
     border-radius: 4px;
 }
+
 .submenu-item:hover {
     background-color: #90999b;
 }
@@ -74,10 +77,12 @@ body {
     display: none;
     margin-left: 10px;
 }
+
 .subsubmenu {
     display: none;
     margin-left: 10px;
 }
+
 .subsubmenu {
     color: #0d4116;
     cursor: pointer;
@@ -87,6 +92,7 @@ body {
     background-color: #4bd891;
     border-radius: 4px;
 }
+
 .subsubmenu :hover {
     background-color: #4bd891;
 }
@@ -143,21 +149,25 @@ body {
     margin-top: 50px;
     color: #555;
 }
+
 fieldset label {
     font-size: 100%;
     color: maroon;
     display: block;
     text-align: left;
 }
+
 fieldset input {
     font-size: 130%;
     color: black;
     width: 100%;
 }
+
+
 .definicao {
     color: rgb(216, 8, 8);
 }
-  
+
 .conteudo-dinamico {
     color: rgb(216, 8, 8);
     margin: 20px;
@@ -166,6 +176,7 @@ fieldset input {
     border-radius: 5px;
     background-color: #f9f9f9;
 }
+
 .paragrafo-item {
     margin-bottom: 10px;
     padding: 8px;
@@ -176,7 +187,7 @@ fieldset input {
 .tabela-dados {
     font-family: Arial, sans-serif;
     margin-top: 20px;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tabela-dados th {
@@ -197,4 +208,420 @@ fieldset input {
 
 .tabela-dados tr:hover {
     background-color: #f1f1f1;
+}
+
+.btn-realistic {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #5fa0d8 0%, #3162bd 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-realistic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #5fa0d8 0%, #3162bd 100%);
+}
+
+.btn-realistic:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-realficha {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #99a0a1 0%, #333738 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-realficha:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #99a0a1 0%, #333738 100%);
+}
+
+.btn-realficha:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-realnovo {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #73a749 0%, #16790d 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-realnovo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #73a749 0%, #16790d 100%);
+}
+
+.btn-realnovo:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-voltar {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-voltar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d 100%);
+}
+
+.btn-voltar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retornar {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-retornar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #aa4a4a 0%, #7e2b3d 100%);
+}
+
+.btn-retornar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-selecionar {
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #4aaa6a 0%, #218331 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-selecionar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #4aaa6a 0%, #218331 100%);
+}
+
+.btn-selecionar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-definicao {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #bfc228 0%, #f0d808 100%);
+    color: rgb(7, 4, 4);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-definicao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #bfc228 0%, #f0d808 100%);
+}
+
+.btn-definicao:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-busca {
+    padding: 8px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Cantos super arredondados */
+    border: none;
+    background: linear-gradient(to bottom, #9e9fa7 0%, #797980 100%);
+    color: rgb(244, 248, 248);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-busca:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #9e9fa7 0%, #797980 100%);
+}
+
+.btn-busca:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.processo {
+    color: red;
+    font-weight: bold;
+    /* outros estilos */
+}
+
+
+.periodo-fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.periodo-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.periodo-input {
+    font-size: 130%;
+    color: black;
+}
+
+.periodo-label {
+    font-size: 100%;
+    color: black;
+}
+
+.full-width-select {
+    width: 100%;
+    box-sizing: border-box;
+    /* Garante que padding/border não aumentem o tamanho */
+    font-size: 130%;
+    color: black;
+}
+
+.select-label {
+    font-size: 100%;
+    color: rgb(14, 12, 12);
+}
+
+select {
+    width: 100%;
+    /* Ocupa todo o espaço disponível no fieldset */
+    font-size: 130%;
+    color: black;
+    white-space: nowrap;
+    /* Impede que o texto quebre em várias linhas */
+    overflow: hidden;
+    /* Esconde o texto que ultrapassar */
+    text-overflow: ellipsis;
+    /* Adiciona "..." ao final do texto truncado */
+}
+
+select option {
+    white-space: normal;
+    /* Permite que o texto das opções quebre em várias linhas */
+    width: auto;
+    /* Largura automática para exibir todo o texto */
+}
+
+/* Estilo para quando o select está aberto (expanded) */
+select:focus {
+    overflow: visible;
+    /* Permite que o texto exceda o tamanho do select */
+    white-space: normal;
+    /* Permite quebras de linha */
+}
+
+.tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-right: 5px;
+    background: #f1f1f1;
+}
+
+.tab.active {
+    background: white;
+    border-color: #ccc;
+    border-bottom: 1px solid white;
+    margin-bottom: -1px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo base do fieldset */
+.meu-fieldset-especial {
+    /*border: 1px solid #ccc;*/
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Container do checkbox invertido (label -> checkbox) */
+.checkbox-reverso {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Inverte a ordem (checkbox fica depois do label) */
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: flex-end;
+    /* Alinha à direita (mas mantém a ordem do HTML) */
+    gap: 8px;
+    /* Espaço entre label e checkbox */
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* Espaço entre itens */
+}
+
+/* Estilo do texto do label */
+.checkbox-reverso span {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo personalizado do checkbox */
+.checkbox-reverso input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 4px;
+}
+
+/* Estilo quando marcado */
+.checkbox-reverso input[type="checkbox"]:checked {
+    background-color: maroon;
+    border-color: maroon;
+}
+
+/* Estilo da lista */
+.lista-itens {
+    width: 300px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.item-lista {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.item-lista:hover {
+    background-color: #f5f5f5;
+}
+
+/* Estilo do popup */
+.popup {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 10px;
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+/* Você pode usar esta classe alternativa para popup acima do item */
+.popup-top {
+    bottom: 100%;
+    top: auto;
+    left: 0;
 }

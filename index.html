@@ -19,27 +19,26 @@
             <div class="sidebar">
                 <ul class="tree-menu">
                     <li>
-                        <span class="menu-item" onclick="toggleSubMenu(this)">Fases do processo...</span>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Fases Aduaneiras...</span>
                         <ul class="submenu">
                             <li>
-                                <span class="submenu-item" onclick="toggleSubMenu(this)">Pre-Embarque...</span>
-                                <ul class="submenu">
-                                    <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
-                                    <li><a href="#" onclick="loadContent('pre_embarque.html')">Atributos Pré embarque</a></li>
-                                </ul>
+                                <span class="submenu-item" onclick="loadContent('pre_embarque.html')">Pre-Embarque...</span>
                             </li>
                             <li>
-                                <span class="submenu-item" onclick="toggleSubMenu(this)">Embarque...</span>
+                                <span class="submenu-item"  onclick="loadContent('Embarque.html')">Embarque...</span>
                                 <ul class="submenu">
                                     <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
                                     <li><a href="#" onclick="loadContent('Embarque.html')">Atributos Embarque</a></li>
                                     <li><a href="#" onclick="loadContent('Carga.html')">Dados Carga</a></li>
                                     <li><a href="#" onclick="loadContent('Invoice.html')">Gestão da Invoice</a></li>
-                                    <li><a href="https://hduimp.databras.com.br/" target="_blank">Gestão de Catálogo</a></li>
+                                    <li><a href="https://hduimp.databras.com.br/" target="_blank">APP Catálogo DUIMP</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <span class="submenu-item" onclick="toggleSubMenu(this)">Desembaraço...</span>
+                                <span class="submenu-item"  onclick="loadContent('Invoice.html')">Invoice...</span>
+                            </li>
+                            <li>
+                                <span class="submenu-item" onclick="loadContent('Desembaraco.html')">Desembaraço...</span>
                                 <ul class="submenu">
                                     <li><a href="#" onclick="loadContent('Eventos.html')">Eventos da fase</a></li>
                                     <li><a href="#" onclick="loadContent('Forecast.html')">Forecast</a></li>
@@ -49,7 +48,16 @@
                                     <li><a href="#" onclick="loadContent('Padim.html')">Recup. DUIMP(padim)</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <span class="submenu-item" onclick="loadContent('Financeiro.html')">Financeiro...</span>
+                            </li>
                         </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Gestão de Catálogo...</span>
+                        <ul class="submenu">
+                            <li><a href="https://hduimp.databras.com.br/" >APP Catálogo DUIMP</a></li>
+                       </ul>
                     </li>
                     <li>
                         <span class="menu-item" onclick="toggleSubMenu(this)">Gestão Financeira...</span>
@@ -71,7 +79,7 @@
                             <li><a href="#" onclick="loadContent('Fases.html')">Fases do Processo</a></li>
                             <li><a href="#" onclick="loadContent('Eventos.html')">Eventos de fases</a></li>
                             <li><a href="#" onclick="loadContent('Atributos.html')">Atributos de processos</a></li>
-                            <li><a href="#" onclick="loadContent('KPIs.html')">KPIs</a></li>
+                            <li><a href="#" onclick="loadContent('Param_kpi.html')">KPIs</a></li>
                             <li><a href="#" onclick="loadContent('Atores.html')">Atores</a></li>
                         </ul>
                     </li>
@@ -95,6 +103,12 @@
                         <span class="menu-item" onclick="toggleSubMenu(this)">Últimos acessos...</span>
                         <ul class="submenu">
                             <li><a href="#" onclick="loadContent('Consulta-1.html')">Consulta-1</a></li>
+                       </ul>
+                    </li>
+                    <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">Teste abas...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('abas_aninhadas.html')">Consulta-1</a></li>
                        </ul>
                     </li>
                    

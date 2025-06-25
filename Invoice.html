@@ -172,22 +172,164 @@ th, td {
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('EMBARQUE','INVOICE','CONSULTA')">Consulta</li>
-            <li class="tab" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','INVOICE','ATRIBUTOS')">Atributos</li>
+            <li class="tab active" data-tab="tab1"  onclick="loadJsonData('EMBARQUE','INVOICE','CONSULTA')">Invoices</li>
+            <!-- <li class="tab" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','INVOICE','ATRIBUTOS')">Atributos</li>
             <li class="tab" data-tab="tab3"  onclick="loadJsonData('EMBARQUE','INVOICE','ITEM')">Detalhe item</li>
             <li class="tab" data-tab="tab4"  onclick="loadJsonData('EMBARQUE','INVOICE','PROC-ENV')">Processos Envolvidos</li>
             <li class="tab" data-tab="tab5"  onclick="loadJsonData('EMBARQUE','INVOICE','CAMBIAL')">Cambial</li>
             <li class="tab" data-tab="tab6"  onclick="loadJsonData('EMBARQUE','INVOICE','EMBALAGEM')">Embalagem</li>
             <li class="tab" data-tab="tab7"  onclick="loadJsonData('EMBARQUE','INVOICE','IMPRESSAO')">Impressão</li>
-            <!-- <li class="tab" data-tab="tab8"  onclick="loadJsonData('EMBARQUE','INVOICE','EVENTOS')">Eventos</li>-->
+            <li class="tab" data-tab="tab8"  onclick="loadJsonData('EMBARQUE','INVOICE','EVENTOS')">Eventos</li>-->
         </ul>
 
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-        
+
         <div id="tab1" class="tab-content active">
+            <div align="left">
+                <input width="8" type="button" class="btn-voltar" value="Voltar"  onclick="loadContent('Embarque_atr.html')" style="margin-right: 5px;"/>
+            </div>
+            <div align="right">
+                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','EVENTOS')" style="margin-right: 5px;"/>
+            </div>
+            <h1 align="center">Invoices do Embarque ...</h1>
+            <div>
+                <h2>Filtro de busca</h2>
+                <div class="card">
+                    
+                   
+                    <div class="card-header" align="left">
+                        
+                        <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF.PRE-EMBARQUE</label>
+                            <div class="periodo-inputs">
+                                <input width="50%" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('pre_embarque.html','busca_processo.html')" style="margin-right: 5px;"/>
+                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
+                            </div>
+                        </fieldset>
+
+                       <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">PERÍODO de / até</label>
+                            <div class="periodo-inputs">
+                                <input id="dataInicio" name="dataInicio" class="periodo-input" type="date">
+                                <input id="dataFim" name="dataFim" class="periodo-input" type="date">
+                            </div>
+                        </fieldset>
+
+                    </div>
+                         
+                    
+                </div>
+                <div align="center">
+                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
+                </div>
+            </div>
+        
+            <br><br><br><br>
+            <div>
+                <h2>Lista de Invoices do Embarque <span class="processo">EMB-XYZ-0001</span></h2>
+                <div class="outer-wrapper" align="center">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th align="center" bgcolor="Grey">EDITAR</th>
+                                    <th align="center" bgcolor="Grey">NUMERO DA INVOICE</th>
+                                    <th align="center" bgcolor="Grey">ABERTURA</th>
+                                    <th align="center" bgcolor="Grey">REGIME</th>
+                                    <th align="center" bgcolor="Grey">MODAL</th>
+                                    <th align="center" bgcolor="Grey">AGENTE</th>
+                                    <th align="center" bgcolor="Grey">CAMPO CUSTOMIZADO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-info" style="height:25px;">
+                                    <td class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Da tabela...</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="codigosinterno">Da tabela...</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="ncm">Da tabela...</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Da tabela...</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Da tabela...</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Campo-5</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Campo-6</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-info" style="height:25px;">
+                                    <td class="list-inline-item">
+                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="loadContent('Invoice_atr.html')"><i class="fa fa-edit"></i></button>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Campo-1</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <div style="width: 100px;" id="codigosiscomex">Campo-2</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="codigosinterno">Campo-3</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;" id="ncm">Campo-4</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Campo-5</div>
+                                    </td>
+                                    <td align="center" bgcolor="WhiteSmoke">
+                                        <div style="width: 100px;">Campo-6</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div align="center">
+                <!--<input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()" style="margin-right: 5px;" />-->
+                <input width="20" type="button" class="btn-realnovo" value="Nova Invoice" onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;"/>
+                <!--<input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" style="margin-right: 5px;"/>-->
+               
+            </div>
+        </div>
+        
+        <div id="tab1" class="tab-content">
            
             <h1 align="center">Consulta Atributos da Invoice</h1>
             <div>

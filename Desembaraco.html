@@ -170,6 +170,9 @@ th, td {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div align="right">
+        <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;"/>
+    </div>
     <div class="tab-container">
         <ul class="tabs">
             <!--<li class="tab active" data-tab="tab2"  onclick="loadJsonData('EMBARQUE','EMBARQUE','ATRIBUTOS')">Criar processo</li>-->
@@ -186,12 +189,10 @@ th, td {
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-        
+
+       <div><h1 align="left" style="color:maroon">DESEMBARAÇO ADUANEIRO</h1></div> 
+        <br><br>
         <div id="tab1" class="tab-content active">
-            <div align="right">
-                <input width="8" type="button" class="btn-definicao" value="Definição"   onclick="loadJsonData('EMBARQUE','EMBARQUE','CONSULTA')" style="margin-right: 5px;"/>
-            </div>
-            <h1 align="center">Consulta Desembaraços</h1>
             <div>
                 <h2>Filtro de Busca</h2>
                 <div class="card">
@@ -243,7 +244,7 @@ th, td {
                 </div>
             </div>
         
-            <br><br><br><br>
+            <br><br>
             <div>
                 <h2>Desembaraços Filtrados</h2>
                 <div class="outer-wrapper" align="center">
