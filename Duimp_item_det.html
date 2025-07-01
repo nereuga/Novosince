@@ -265,10 +265,10 @@
 
     <div id="tab1" class="tab-content active">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> 
-                                  Produto: <span class="processo">PROD-0001</span> - Atributos técnicos</h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span> - Atributos técnicos</h2><br><br>
             <div class="outer-wrapper" align="center">
                 <div class="table-wrapper">
                     <table>
@@ -405,16 +405,23 @@
                     </table>
                 </div>
             </div>
+            <div align="center">
+                <input width="8" type="button" class="btn-realistic" value=" Exporta dados   "
+                    onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;" />
+                <input width="8" type="button" class="btn-realnovo" value=" Novo Atributo   "
+                    onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;" />
+            </div>
+
 
         </div>
     </div>
 
     <div id="tab2" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> 
-                                  Produto: <span class="processo">PROD-0001</span> - Dados Cambiais</h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span> - Dados Cambiais</h2><br><br>
 
             <div class="card">
 
@@ -582,10 +589,10 @@
 
     <div id="tab3" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> 
-                                  Produto: <span class="processo">PROD-0001</span> -Orgão anuentes</h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span> -Orgão anuentes</h2><br><br>
 
             <div class="outer-wrapper" align="center">
                 <h2 align="center">LPCO</h2>
@@ -728,6 +735,8 @@
                     style="margin-right: 5px;" />
                 <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
                     style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realnovo" value="Novo Orgão" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
             </div>
 
         </div>
@@ -736,10 +745,10 @@
 
     <div id="tab4" class="tab-content">
         <div>
-           <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> 
-                                  Produto: <span class="processo">PROD-0001</span> - Operadores estrangeiros</h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span> - Operadores estrangeiros</h2><br><br>
             <div class="card">
 
                 <div class="card-header" align="left">
@@ -898,15 +907,24 @@
                     </table>
                 </div>
             </div>
+
+             <div align="center">
+                <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
+                <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realnovo" value="Novo Operador" onclick="callAtributo()"
+                    style="margin-right: 5px;" />
+            </div>
         </div>
     </div>
 
     <div id="tab5" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> 
-                                  Produto: <span class="processo">PROD-0001</span> - Tributos</h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span> - Tributos</h2><br><br>
 
             <div class="tab-container">
                 <ul class="tabs">
@@ -1173,6 +1191,8 @@
                             style="margin-right: 5px;" />
                         <input width="8" type="button" class="btn-realistic" value="Exportar dados"
                             onclick="callAtributo()" style="margin-right: 5px;" />
+                             <input width="8" type="button" class="btn-realnovo" value="Novo Tributo"
+                            onclick="callAtributo()" style="margin-right: 5px;" />
                     </div>
                 </div>
 
@@ -1214,6 +1234,8 @@
                         <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
                             style="margin-right: 5px;" />
                         <input width="8" type="button" class="btn-realistic" value="Exportar dados"
+                            onclick="callAtributo()" style="margin-right: 5px;" />
+                             <input width="8" type="button" class="btn-realnovo" value="Novo documento"
                             onclick="callAtributo()" style="margin-right: 5px;" />
                     </div>
                 </div>

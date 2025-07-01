@@ -1,515 +1,386 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONSULTA-1</title>
-   
+
     <style>
         /* Estilos das abas */
- .tabs {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
+        .tabs {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
 
-.tab {
-    position: relative;
-    padding: 12px 20px;
-    margin-right: 5px;
-    background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
-    border: 1px solid #ccc;
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
-    z-index: 1;
-    transition: all 0.2s ease;
-}
+        .tab {
+            position: relative;
+            padding: 12px 20px;
+            margin-right: 5px;
+            background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            z-index: 1;
+            transition: all 0.2s ease;
+        }
 
-.tab:hover {
-    background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
-}
+        .tab:hover {
+            background: linear-gradient(to bottom, #e9e9e9, #d9d9d9);
+        }
 
-.tab.active {
-    background: #fff;
-    color: #333;
-    z-index: 3;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
-    border-bottom: 1px solid #fff;
-    margin-bottom: -1px;
-}
+        .tab.active {
+            background: #fff;
+            color: #333;
+            z-index: 3;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+        }
 
-.tab-content {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 0 5px 5px 5px;
-    background: #fff;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 2;
-}
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0 5px 5px 5px;
+            background: #fff;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
 
-.tab-content.active {
-    display: block;
-}
+        .tab-content.active {
+            display: block;
+        }
 
-/* Efeito 3D opcional */
-.tab.active:before, .tab.active:after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    width: 5px;
-    height: 5px;
-    background: #fff;
-}
+        /* Efeito 3D opcional */
+        .tab.active:before,
+        .tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+        }
 
-.tab.active:before {
-    left: -6px;
-    border-bottom-right-radius: 5px;
-    box-shadow: 3px 0 0 0 #fff;
-}
+        .tab.active:before {
+            left: -6px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 3px 0 0 0 #fff;
+        }
 
-.tab.active:after {
-    right: -6px;
-    border-bottom-left-radius: 5px;
-    box-shadow: -3px 0 0 0 #fff;
-}
- /* Estilize o card */
- .card {
-     background-color: #f0f0f0;
-     border-radius: 8px;
-     border: 1px solid black;
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-     padding: 16px;
-     margin: 20px;
- }
+        .tab.active:after {
+            right: -6px;
+            border-bottom-left-radius: 5px;
+            box-shadow: -3px 0 0 0 #fff;
+        }
 
- /* Estilize o cabeçalho do card */
- .card-header {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-     gap: 10px; /* Espaçamento entre os campos */
-     align-items: center;
- }
+        /* Estilize o card */
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin: 20px;
+        }
 
- .card-button {
-     display: grid;
-     grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-     gap: 10px; /* Espaçamento entre os campos */
-     align-items: center;
- }
- .card-button4 {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-     gap: 10px; /* Espaçamento entre os campos */
-     align-items: center;
- }
+        /* Estilize o cabeçalho do card */
+        .card-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
 
- .card-button2 {
-     display: grid;
-     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-     gap: 10px; /* Espaçamento entre os campos */
-     align-items: center;
- }
- /* Botão primário */
- .btn-primary {
-    background-color: #4361ee;
-    color: white;
-}
+        .card-button {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
 
-.btn-primary:hover {
-    background-color: #3a56d4;
-}
-/*Estilos para tabelas*/
-.heading {
-    display: flex;
-}
+        .card-button4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
 
-table {
-    border: 1px solid black;
-    border-collapse: separate;
-    border-spacing: 0px;
-    min-width: 50%;
-    font-size: medium;
-    width: 90%;
-    /* float: right;*/
-}
+        .card-button2 {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            /* 2 colunas */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+            align-items: center;
+        }
 
-th {
-    position: sticky;
-    top: 0px;
-    color: White;
-}
 
-.table-wrapper {
-    max-height: 800px;
-    max-width: 2300%;
-    overflow: scroll;
-    margin: 10px;
-}
+        /* Botão primário */
+        .btn-primary {
+            background-color: #4361ee;
+            color: white;
+        }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    height: max-content;
-    width: auto;
-}
+        .btn-primary:hover {
+            background-color: #3a56d4;
+        }
 
-.outer-wrapper {
-    border: 1px solid black;
-    box-shadow: 0px 0px 3px black;
-    margin: 28px;
-    border-radius: 5px;
-}
+        /*Estilos para tabelas*/
+        .heading {
+            display: flex;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: separate;
+            border-spacing: 0px;
+            min-width: 50%;
+            font-size: medium;
+            width: 90%;
+            /* float: right;*/
+        }
+
+        th {
+            position: sticky;
+            top: 0px;
+            color: White;
+        }
+
+        .table-wrapper {
+            max-height: 800px;
+            max-width: 2300%;
+            overflow: scroll;
+            margin: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            height: max-content;
+            width: auto;
+        }
+
+        .outer-wrapper {
+            border: 1px solid black;
+            box-shadow: 0px 0px 3px black;
+            margin: 28px;
+            border-radius: 5px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1" onclick="loadJsonData('CONSULTA','CONSULTA-1','CONSULTA')">Consulta</li>
-            <li class="tab" data-tab="tab2"  onclick="loadJsonData('CONSULTA','CONSULTA-1','DASHBOARD')">DashBoard</li>
-            <!--<li class="tab" data-tab="tab3">Processos Envolvidos</li> -->
-            <!--<li class="tab" data-tab="tab4">Eventos</li> -->
+            <li class="tab active" data-tab="tab1" onclick="loadJsonData('CONSULTA','CONSULTA-1','CONSULTA')">Relatórios
+            </li>
+            <li class="tab" data-tab="tab2" onclick="loadJsonData('CONSULTA','CONSULTA-1','DASHBOARD')">Estatísticas
+            </li>
         </ul>
 
         <div class="conteudo-dinamico" id="conteudoJson">
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-        
-        <div id="tab1" class="tab-content active">
-           
-            <h1 align="center">Consulta ...</h1>
-            <div>
-                <div class="card">
-                    
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPOS CUSTOMIZADOS</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
-                    
-                    <div align="center">
-                        <input width="8" type="button" class="btn-primary" value="Consultar" onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Limpar filtro" onclick="callAtributo()" />
-                    </div>
+
+        <div id="tab1" align="center" class="tab-content active">
+
+            <h2 align="left">Relatórios ...</h2>
+            <div class="card" style="height:100px;width:600px;">
+                <div class="card-button2" align="center" style="height:100px;width:600px;">
+                    <fieldset>
+                        <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="center">*
+                            RELATÓRIOS</label>
+                       <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" onchange="goToJanela(this.value,'Rel.html')"
+                                    class="row-content">
+                            <option value="opcao1">Selecione uma opção</option>
+                            <option value="Imagens\REL_STATUS_DESEMBARACO.jpg">RELATÓRIO DE STATUS DE FASES ADUANEIRAS</option>
+                            <option value="opcao2">RELATÓRIO À DEFINIR</option>
+                            <option value="opcao3">RELATÓRIO À DEFINIR</option>
+                            <option value="opcao4">RELATÓRIO À DEFINIR</option>
+                           
+                        </select>
+                    </fieldset>
                 </div>
             </div>
-        
+
             <br><br><br><br>
 
-            <div>
-                <div class="card">
-                    
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO CUSTOMIZADO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
-                        </fieldset>
-                    </div>
-                    
-                    <div align="center">
-                        <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                        <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div align="center">
-                    <img src="DASHBOARD-2.JPG" alt="Foto" width="800" height="400">
-                </div>
-                <div align="center">
-                     <input width="8" type="button" class="btn-primary" value="Exportar Excel" onclick="callAtributo()" />
-                     <input width="8" type="button" class="btn-primary" value="Exportar PDF" onclick="callAtributo()" />
-                </div>
-            </div>
-            
-        </div>
-    
-        
-        <div id="tab2" class="tab-content">
-            <h1 align="center">DashBoard ...</h1>
-            <div>
-                <div align="center">
-                    <img src="DASHBOARD-2.JPG" alt="Foto" width="1200" height="600">
-                </div>
-                <div align="center">
-                     <input width="8" type="button" class="btn-primary" value="Exportar Excel" onclick="callAtributo()" />
-                     <input width="8" type="button" class="btn-primary" value="Exportar PDF" onclick="callAtributo()" />
-                </div>
-            </div>   
-        </div>
-        
-       
-        <div id="tab3" class="tab-content">
-            <div>
-                <p class="definicao">DEFINIÇÕES: <br>    
-                    1- Será exibida uma lista de todos os processos envolvidos com o Embarque<br>
-                    2- Ao clicar no botão editar da lista, o sistema deverá desviar para a tela do processo escolhido abrindo a ABA Atributos deste <br>
-                    3- O Sair do processo para qual foi desviada a tela, o sistema deverá retornar à esta tela e ABA deste Embarque <br>
-                    4- O botão Exportar dados deverá exportar os dados do Embarque no formato excel, <br>
-                    5- O Botão Sair , deverá fechar toda a tela.
-                    </p> 
-                <h1>Processos Envolvidos Embarque...</h1>
-                <div class="outer-wrapper" align="center">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center" bgcolor="Grey">EDITAR</th>
-                                    <th align="center" bgcolor="Grey">TIPO DE PROCESSO</th>
-                                    <th align="center" bgcolor="Grey">NUMERO DO PROCESSO</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" class="list-inline-item">
-                                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" onclick="openTab('tab2')"><i class="fa fa-edit"></i></button>
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="TIPO PROCESSO" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="text"  >
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
-                </div>
-            </div>
-           
         </div>
 
-        <div id="tab4" class="tab-content">
-            <div>
-                <p class="definicao">DEFINIÇÕES: <br>    
-                    1- Será exibida uma lista de todos os eventos do Embarque<br>
-                    2- Os campos de tipo de processo e número de Processo virão preenchidos com o Tipo "Embarque" e o Número do processo Embarque.<br>
-                    3- Caso queira, o usuário poderá escolher outro Tipo e Número de processo para consultar os eventos
-                    4- O cliente poderá atualizar todas as datas previstas e realizadas <br>
-                    5- O clicar no Botão salvar o sistema deverá persistir os dados na base <br>
-                    6- O botão Exportar dados deverá exportar os dados do Pr-e-Embarque no formato excel, <br>
-                    7- O Botão Sair , deverá fechar toda a tela.
-                    </p> 
-                <h1>Eventos do ...</h1>
-                <div class="card-header" align="left">
-                    <fieldset>
-                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">Tipo de PROCESSO</label>
-                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Lista Estática-  Dropdown" >
-                    </fieldset>
-                    <fieldset>
-                        <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NUMERO PROCESSO</label>
-                        <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" align="right" type="text" value="Texto Livre" >
-                    </fieldset>
-                    
-                    <div align="left">
-                        <input width="8" type="button" class="btn-primary" value="Busca Eventos" onclick="callAtributo()" />
-                    </div> 
-                </div>
-                <div class="outer-wrapper" align="center">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
-                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
-                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Recebimento da Invoice" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Booking da Carga" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Agendamento de Transporte" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Conferência de Documentos de Embarque" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Envio de Documentos de Instrução RFB ao Despachante" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Preparação e Revisão do Catálogo de Produtos" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" value="Eventos CUSTOMIZADOS" >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1" class="row-content" type="date"  >
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2" class="row-content" type="date"  >
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+        <div id="tab2" class="tab-content">
+            <h2 align="left">Estatísticas ...</h2>
+            <div class="tab-container">
+                <ul class="tabs">
+                    <li class="tab" data-tab="tab22" onclick="loadJsonData('CONSULTA','CONSULTA-1','CONSULTA')">Carga
+                    </li>
+                    <li class="tab" data-tab="tab23" onclick="loadJsonData('CONSULTA','CONSULTA-1','DASHBOARD')">Valores
+                    </li>
+                    <li class="tab" data-tab="tab24" onclick="loadJsonData('CONSULTA','CONSULTA-1','DASHBOARD')">DUIMP
+                    </li>
+                    <li class="tab" data-tab="tab25" onclick="loadJsonData('CONSULTA','CONSULTA-1','DASHBOARD')">
+                        impostos</li>
+                </ul>
+
+                <div id="tab22" align="center" class="tab-content">
+                    <h2 align="center">Estatísticas referente à Carga</h2>
+                    <div class="card" style="height:100px;width:600px;">
+                        <div class="card-button2" align="center" style="height:100px;width:600px;">
+                            <fieldset>
+                                <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon"
+                                    align="center">*
+                                    Estatísticas</label>
+                                <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" onchange="goToJanela(this.value,'Estatistica.html')"
+                                    class="row-content">
+                                    <option value="opcao1">Selecione uma opção</option>
+                                    <option value="Imagens\CARGA_PARTIDA_CHEGADA.jpg">PARTIDA X CHEGADA</option>
+                                    <option value="Imagens\CARGA_PRESENCA_CARGA_CHEGADA.jpg">PRESENÇA CARGA X CHEGADA</option>
+                                    <option value="Imagens\CARGA_NUMERO_PROCESSOS.jpg">Número de processos</option>
+                                    <option value="Imagens\CARGA_NUMERO_PROCESSOS_CANAL.jpg">Número processo por canal</option>
+                                    <option value="Imagens\CARGA_PAIS_ORIGEM_PROCEDENCIA.jpg">País Procedência</option>
+                                </select>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
+
+                <div id="tab23" align="center" class="tab-content">
+                    <h2 align="left">Estatísticas referente à Valores</h2>
+                    <div class="card" style="height:100px;width:600px;">
+                        <div class="card-button2" align="center" style="height:100px;width:600px;">
+                            <fieldset>
+                                <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon"
+                                    align="center">*
+                                    Estatísticas</label>
+                                 <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" onchange="goToJanela(this.value,'Estatistica.html')"
+                                    class="row-content">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="Imagens\VLR_CUSTO_FRETE_PAIS_ORIGEM.jpg">Custo Frete por Pais de Origem</option>
+                                    <option value="Imagens\VLR_CUSTO_FRETE_MODAL.jpg">Custo  Frete por Modal</option>
+                                    <option value="Imagens\VLR_CUSTO_FRETE_PERIODO.jpg">Custo de Frete por Período</option>
+                                    <option value="Imagens\VLR_CUSTO_FOB_PERIODO.jpg">Custo FOB por Período</option>
+                                    <option value="Imagens\VLR_CUSTO_SEGURO_PERIODO.jpg">Custo Seguro por Período</option>
+                                    <option value="Imagens\VLR_CUSTO_CIF_PERIODO.jpg">Custo CIF por Período</option>
+                                    <option value="Imagens\VLR_CUSTO_CIF_PERIODO.jpg">Comparativo FOB, Frete e Seguro</option>
+                                    
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab24" align="center" class="tab-content">
+                    <h2 align="left">Estatísticas referente à DUIMP</h2>
+                    <div class="card" style="height:100px;width:600px;">
+                        <div class="card-button2" align="center" style="height:100px;width:600px;">
+                            <fieldset>
+                                <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon"
+                                    align="center">*
+                                    Estatísticas</label>
+                                <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" onchange="goToJanela(this.value,'Estatistica.html')"
+                                    class="row-content">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="Imagens\DUIMP_REGISTRO_CHEGADA.jpg">Registro X Chegada</option>
+                                    <option value="Imagens\DUIMP_REGISTRO_PRESENCA.jpg">Registro X Presença de Carga</option>
+                                    <option value="opcao3">Liberação Carga na RFB X Chegada</option>
+                                    <option value="opcao4">Registro X Liberação da Carga</option>
+                                    <option value="Imagens\DUIMP_SOLIC_NOTA_FISCAL.jpg">Solicitação X Abertura Nota Fiscal</option>
+                                    <option value="Imagens\DUIMP_RETIRADA_ARMAZEM_ENTREGA_BASE.jpg">Liberação Carga X Retirada Armazém</option>
+                                    <option value="Imagens\DUIMP_RETIRADA_ARMAZEM_ENTREGA_BASE.jpg">Retirada do Aramazém X Entrega na Base</option>
+                                    <option value="Imagens\DUIMP_SOLIC_NUMERARIO.jpg">Solicitaçãon X Liberação Numerário</option>
+                                   
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                 <div id="tab25" align="center" class="tab-content">
+                    <h2 align="left">Estatísticas referente à Impostos</h2>
+                    <div class="card" style="height:100px;width:600px;">
+                        <div class="card-button2" align="center" style="height:100px;width:600px;">
+                            <fieldset>
+                                <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon"
+                                    align="center">*
+                                    Estatísticas</label>
+                                <select style="font-size: 130%; color: black" id="idcomex" name="idcomex" onchange="goToJanela(this.value,'Estatistica.html')"
+                                    class="row-content">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="IMPOSTOS_II.jpg">II por período e Modal</option>
+                                    <option value="IMPOSTOS_IPI.jpg">IPI Por Período e Modal</option>
+                                    <option value="IMPOSTOS_PIS.jpg">Pis Por Período e Modal</option>
+                                    <option value="IMPOSTOS_COFINS.jpg">Cofins por período e Modal</option>
+                                    <option value="IMPOSTOS_TAXA_SISCOMEX.jpg">Taxa Siscomex Por Período e Modal</option>
+                                   
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+                
                 <div align="center">
-                    <input width="8" type="button" class="btn-primary" value="Salvar" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Exportar Lista" onclick="callAtributo()" />
-                    <input width="8" type="button" class="btn-primary" value="Sair" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Exportar Excel"
+                        onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-primary" value="Exportar PDF" onclick="callAtributo()" />
                 </div>
             </div>
         </div>
+
+    </div>
+
+     <div align="center" id="container-da-imagem">
+
     </div>
 
     <script>
 
-         // Função principal para abrir abas
-         function openTab(tabId) {
+        // Função principal para abrir abas
+        function openTab(tabId) {
             // Remove a classe active de todas as abas e conteúdos
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-            
+
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
-            
+
             // Adiciona a classe active na aba e conteúdo correspondentes
             document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
             document.getElementById(tabId).classList.add('active');
         }
-        
+
         // Adiciona os event listeners para as abas
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', function() {
+                tab.addEventListener('click', function () {
                     const tabId = this.getAttribute('data-tab');
                     openTab(tabId);
                 });
             });
-            
+
             // Opcional: pode definir uma aba padrão aqui
             // openTab('tab1');
         });
@@ -555,4 +426,5 @@ th, td {
 
     </script>
 </body>
+
 </html>

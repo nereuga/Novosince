@@ -187,12 +187,12 @@
 
 <body>
     <div align="left">
-        <input width="8" type="button" class="btn-voltar" value="Voltar"
-        onclick="loadContent('Desembaraco.html')" style="margin-right: 5px;" />
+        <input width="8" type="button" class="btn-voltar" value="Voltar" onclick="loadContent('Desembaraco.html')"
+            style="margin-right: 5px;" />
     </div>
     <div align="right">
         <input width="8" type="button" class="btn-definicao" value="Definição"
-        onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
+            onclick="loadJsonData('EMBARQUE','EMBARQUE','PROC-ENV')" style="margin-right: 5px;" />
     </div>
     <div class="tab-container">
         <ul class="tabs">
@@ -209,11 +209,12 @@
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
-            
+
         <div id="tab1" class="tab-content active">
-            <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Atributos</h2>
-             
-             <br><br>
+            <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                    DES-0001 </span> - Atributos</h2>
+
+            <br><br>
             <div>
 
                 <div class="card">
@@ -302,151 +303,157 @@
 
                 </div>
                 <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Novo " onclick="callAtributo()"
-                        style="margin-right: 5px;" />
+
                     <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
                         style="margin-right: 5px;" />
                     <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"
                         style="margin-right: 5px;" />
                     <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
+                    <input width="8" type="button" class="btn-realnovo" value="Novo Desembaraço "
+                        onclick="callAtributo()" />
                 </div>
             </div>
             <div>
 
-                <h2 align="left" >Eventos do Desembaraço</h1> 
-        
-                <div class="outer-wrapper" align="center">
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
-                                    <th align="center" bgcolor="Grey">DATA PREVISTA</th>
-                                    <th align="center" bgcolor="Grey">DATA REALIZADA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text" value="Recebimento da Invoice">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text" value="Booking da Carga">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text" value="Agendamento de Transporte">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text"
-                                            value="Conferência de Documentos de Embarque">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text"
-                                            value="Envio de Documentos de Instrução RFB ao Despachante">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text"
-                                            value="Preparação e Revisão do Catálogo de Produtos">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                                <tr class="table-info" style="height:25px;">
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="modalidade" name="modalidade"
-                                            class="row-content" type="text" value="Eventos CUSTOMIZADOS">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
-                                            class="row-content" type="date">
-                                    </td>
-                                    <td align="center" bgcolor="WhiteSmoke" scope="col">
-                                        <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
-                                            class="row-content" type="date">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <h2 align="left">Eventos do Desembaraço</h1>
+
+                    <div class="outer-wrapper" align="center">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th align="center" bgcolor="Grey">NOME DO EVENTO</th>
+                                        <th align="center" bgcolor="Grey">DATA PREVISTA</th>
+                                        <th align="center" bgcolor="Grey">DATA REALIZADA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Recebimento da Invoice">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Booking da Carga">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Agendamento de Transporte">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Conferência de Documentos de Embarque">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Envio de Documentos de Instrução RFB ao Despachante">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Preparação e Revisão do Catálogo de Produtos">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                    <tr class="table-info" style="height:25px;">
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="modalidade"
+                                                name="modalidade" class="row-content" type="text"
+                                                value="Eventos CUSTOMIZADOS">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-1" name="evento-1"
+                                                class="row-content" type="date">
+                                        </td>
+                                        <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <input style="font-size: 130%; color: black" id="evento-2" name="evento-2"
+                                                class="row-content" type="date">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div align="center">
-                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
-                        style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
-                        style="margin-right: 5px;" />
-                    <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
-                </div>
+                    <div align="center">
+                        <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"
+                            style="margin-right: 5px;" />
+                        <input width="8" type="button" class="btn-realistic" value="Exportar Lista"
+                            onclick="callAtributo()" style="margin-right: 5px;" />
+                        <input width="8" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()" />
+                    </div>
             </div>
         </div>
 
         <div id="tab2" class="tab-content">
             <div>
-                 <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Forecast</h2>
+                <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                        DES-0001 </span> - Forecast</h2>
                 <br><br>
                 <div class="card">
-                    
+
                     <div class="card-header" align="left">
                         <fieldset>
                             <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -482,7 +489,7 @@
                     <li class="tab" data-tab="tab23">Analítico</li>
                 </ul>
                 <div id="tab22" class="tab-content">
-                   
+
                     <h2 align="left"> Sintético</h2>
                     <div>
                         <div class="card">
@@ -714,7 +721,7 @@
                 </div>
 
                 <div id="tab23" class="tab-content">
-                   
+
                     <h2 align="left">Forecast Analítico</h2>
                     <div>
                         <div class="card">
@@ -904,7 +911,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">1</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -922,7 +929,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">30</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -940,7 +947,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">123</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">0.678</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -958,7 +965,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">345</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -976,7 +983,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">543</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">654</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -994,10 +1001,10 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">DESCRIÇÃO</div>
                                             </td>
-                                                                                      
+
                                         </tr>
                                         <tr class="table-info" style="height:25px;">
                                             <td class="list-inline-item">
@@ -1024,7 +1031,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">1</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1042,7 +1049,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">30</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1060,7 +1067,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">123</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">0.678</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1078,7 +1085,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">345</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1096,7 +1103,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">543</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">654</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1114,7 +1121,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">DESCRIÇÃO</div>
                                             </td>
                                         </tr>
@@ -1143,7 +1150,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">1</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1161,7 +1168,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">30</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">USD</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1179,7 +1186,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">123</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">0.678</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1197,7 +1204,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">345</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1215,7 +1222,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">543</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">654</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1233,7 +1240,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">DESCRIÇÃO</div>
                                             </td>
                                         </tr>
@@ -1259,7 +1266,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1277,7 +1284,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">30</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1295,7 +1302,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1313,7 +1320,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">321</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1331,7 +1338,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1349,12 +1356,12 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                         </tr>
                                         <tr class="table-info" style="height:25px;">
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">Total invoice</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1375,7 +1382,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1393,7 +1400,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">90</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1411,7 +1418,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">369</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1429,7 +1436,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">963</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">1035</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1447,7 +1454,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">1629</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">1962</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1465,12 +1472,12 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                         </tr>
-                                          <tr class="table-info" style="height:25px;">
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                        <tr class="table-info" style="height:25px;">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">Total Geral</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1491,7 +1498,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1509,7 +1516,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">90</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1527,7 +1534,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">369</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1545,7 +1552,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">963</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">1035</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1563,7 +1570,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">1629</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">1962</div>
                                             </td>
                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
@@ -1581,7 +1588,7 @@
                                             <td align="center" bgcolor="WhiteSmoke">
                                                 <div style="width: 100px;">--------</div>
                                             </td>
-                                             <td align="center" bgcolor="WhiteSmoke" scope="col">
+                                            <td align="center" bgcolor="WhiteSmoke" scope="col">
                                                 <div style="width: 100px;" id="codigosiscomex">--------</div>
                                             </td>
                                         </tr>
@@ -1597,12 +1604,13 @@
 
         <div id="tab3" class="tab-content ">
 
-           
-            <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Confecção DUIMP</h2>
+
+            <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                    DES-0001 </span> - Confecção DUIMP</h2>
             <br><br>
             <div>
                 <div class="card">
-                    
+
                     <div class="card-header" align="left">
                         <fieldset>
                             <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -1630,26 +1638,28 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>    
+            </div>
             <br><br><br><br>
-          
+
             <div align="center">
                 <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
                     style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Nova Invoice"
-                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
+
                 <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()"
                     style="margin-right: 5px;" />
+                <input width="20" type="button" class="btn-realnovo" value="Nova DUIMP"
+                    onclick="loadContent('Invoice_atr.html')" />
 
             </div>
         </div>
 
         <div id="tab5" class="tab-content ">
-            <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Cálculo SEFAZ ICMS</h2>
-             <br><br>
+            <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                    DES-0001 </span> - Cálculo SEFAZ ICMS</h2>
+            <br><br>
             <div>
                 <div class="card">
-                    
+
                     <div class="card-header" align="left">
                         <fieldset>
                             <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -1677,7 +1687,7 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>     
+            </div>
 
             <div>
                 <h2 align="Left">Filtro de busca</h2>
@@ -1807,21 +1817,23 @@
             <div align="center">
                 <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
                     style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Novo calculo"
-                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
+
                 <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()"
                     style="margin-right: 5px;" />
+                <input width="20" type="button" class="btn-realnovo" value="Novo calculo"
+                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
 
             </div>
         </div>
 
         <div id="tab6" class="tab-content ">
 
-            <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - NF Entrada</h2>
-                        
+            <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                    DES-0001 </span> - NF Entrada</h2>
+
             <div>
                 <div class="card">
-                    
+
                     <div class="card-header" align="left">
                         <fieldset>
                             <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -1849,7 +1861,7 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>  
+            </div>
 
 
             <div>
@@ -1980,22 +1992,24 @@
             <div align="center">
                 <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
                     style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Nova Invoice"
-                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
+
                 <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()"
                     style="margin-right: 5px;" />
+                <input width="20" type="button" class="btn-realnovo" value="Nova NF"
+                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
 
             </div>
         </div>
         <div id="tab4" class="tab-content ">
 
-             <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Recuperação DUIMP</h2>
-           
+            <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                    DES-0001 </span> - Recuperação DUIMP</h2>
+
             <br><br>
-            
-             <div>
+
+            <div>
                 <div class="card">
-                    
+
                     <div class="card-header" align="left">
                         <fieldset>
                             <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -2023,16 +2037,18 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>  
+            </div>
 
-            <div>
+           <!--  <div>
                 <h2 align="Left">Filtro de busca</h2>
                 <div class="card">
 
                     <div class="card-header" align="left">
-                         <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">NÚMERO DUIMP</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  value="Texto livre">
+                        <fieldset>
+                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                align="left">NÚMERO DUIMP</label>
+                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                class="row-content" type="text" value="Texto livre">
                         </fieldset>
                         <fieldset class="periodo-fieldset">
                             <label id="labelPeriodo" for="dataInicio" class="periodo-label">DT REGISTRO de / até</label>
@@ -2083,7 +2099,7 @@
                                 <option value="opcao1">80 - EXPORTACOES CONSOLIDADAS</option>
                             </select>
                         </fieldset>
-                         <fieldset class="select-fieldset">
+                        <fieldset class="select-fieldset">
                             <label id="labelidcomex" for="idcomex" class="select-label">MODAL</label>
                             <select id="idcomex" name="idcomex" class="full-width-select">
                                 <option value="">Selecione uma opção</option>
@@ -2102,7 +2118,7 @@
                     <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()"
                         style="margin-right: 5px;" />
                 </div>
-            </div>
+            </div>-->
 
             <br><br><br><br>
             <div>
@@ -2209,50 +2225,52 @@
             <div align="center">
                 <input width="20" type="button" class="btn-realistic" value="Exportar Lista" onclick="callAtributo()"
                     style="margin-right: 5px;" />
-                <input width="20" type="button" class="btn-realistic" value="Nova Invoice"
-                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
+
                 <input width="20" type="button" class="btn-realistic" value="Sair" onclick="callAtributo()"
                     style="margin-right: 5px;" />
+                <input width="20" type="button" class="btn-realnovo" value="Nova DUIMP"
+                    onclick="loadContent('Invoice_atr.html')" style="margin-right: 5px;" />
 
             </div>
         </div>
 
-       
+
         <div id="tab7" class="tab-content">
             <div>
-                 <h2 align="left" >Embarque: <span class="processo"> EMB-0001 </span> desembaraço:  <span class="processo"> DES-0001 </span> - Proc. Envolvidos</h2>
-                
-                 <div>
-                <div class="card">
-                    
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
-                                align="left">REFERENCIA DO EMBARQUE</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
-                                class="row-content" type="text" disabled>
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
-                                align="left">NUMERO DESEMBARAÇO</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
-                                class="row-content" type="text" disabled>
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
-                                align="left">RESPONSÁVEL</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
-                                class="row-content" type="text" disabled>
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
-                                align="left">MODAL</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
-                                class="row-content" type="text" disabled>
-                        </fieldset>
+                <h2 align="left">Embarque: <span class="processo"> EMB-0001 </span> desembaraço: <span class="processo">
+                        DES-0001 </span> - Proc. Envolvidos</h2>
+
+                <div>
+                    <div class="card">
+
+                        <div class="card-header" align="left">
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">REFERENCIA DO EMBARQUE</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">NUMERO DESEMBARAÇO</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">RESPONSÁVEL</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                            <fieldset>
+                                <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
+                                    align="left">MODAL</label>
+                                <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz"
+                                    class="row-content" type="text" disabled>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
-            </div>  
 
                 <div class="outer-wrapper" align="center">
                     <div class="table-wrapper">

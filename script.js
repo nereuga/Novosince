@@ -5,7 +5,7 @@ function toggleSubMenu(element) {
 }
 
 // Função para carregar conteúdo na DIV central
-
+/*
 function loadContent(page) {
     fetch(page)
         .then(response => response.text())
@@ -23,7 +23,66 @@ function loadContent(page) {
                 </div>
             `;
         });
+}*/
+/*
+function loadContent(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('mainContent').innerHTML = html;
+            // Disparar evento quando o conteúdo for carregado
+            window.dispatchEvent(new CustomEvent('contentLoaded'));
+            setupBackButton();
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o conteúdo:', error);
+            document.getElementById('mainContent').innerHTML = `
+                <div class="error-message">
+                    <h2>Erro ao carregar a página</h2>
+                    <p>${error.message}</p>
+                </div>
+            `;
+        });
+}*/
+function loadContent(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            // Insere o HTML no container
+            document.getElementById('mainContent').innerHTML = html;
+
+            // Chama manualmente a função que deveria rodar na janela2
+            if( page === 'Estatistica.html' || page === 'Rel.html') 
+                {
+                    initJanela2();
+                }
+
+            setupBackButton();
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o conteúdo:', error);
+            document.getElementById('mainContent').innerHTML = `
+                <div class="error-message">
+                    <h2>Erro ao carregar a página</h2>
+                    <p>${error.message}</p>
+                </div>
+            `;
+        });
 }
+
+
+// Função que será chamada manualmente quando o conteúdo for carregado
+function initJanela2() {
+    const figuraNome = sessionStorage.getItem('previousPage');
+    console.log("SessionStorage (janela2): ", figuraNome);
+
+    if (figuraNome) {
+        const imgElement = document.createElement('img');
+        imgElement.src = figuraNome;
+        document.getElementById('container-da-imagem').appendChild(imgElement);
+    }
+}
+
 
 // Função separada para configurar o botão de voltar
 function setupBackButton() {
@@ -165,6 +224,8 @@ function limparContainer(container) {
 function goToJanela(janela1, janela2) {
     sessionStorage.setItem('previousPage', janela1);
     //window.location.href = janela2;
+    console.log("Parâmetros recebidos:", janela1, janela2);
+    console.log("SsessionStorage: ", sessionStorage.getItem('previousPage'));
     loadContent(janela2);
 };
 
@@ -207,3 +268,4 @@ function esconderPopup(elemento) {
     const popup = elemento.querySelector('.popup');
     popup.style.display = 'none';
 }
+

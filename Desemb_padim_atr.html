@@ -242,9 +242,9 @@
 
         <div id="tab1" class="tab-content active">
             <div>
-                <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - identificação </h2><br><br>
+                <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                    Desembaraço: <span class="processo">EMB-0001</span>
+                    DUIMP: <span class="processo">DUIMP-0001</span> - identificação </h2><br><br>
                 <div class="tab-container">
                     <ul class="tabs">
                         <li class="tab active" data-tab="tab11">Identificação</li>
@@ -388,6 +388,8 @@
                                 style="margin-right: 5px;" />
                             <input width="8" type="button" class="btn-realistic" value="Exportar dados"
                                 onclick="callAtributo()" style="margin-right: 5px;" />
+                            <input width="8" type="button" class="btn-realnovo" value="Novo documento"
+                                onclick="callAtributo()" style="margin-right: 5px;" />
                         </div>
                     </div>
                 </div>
@@ -403,9 +405,9 @@
     <div id="tab2" class="tab-content">
         <div>
 
-           <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - Dados Carga </h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span> - Dados Carga </h2><br><br>
             <div class="tab-container">
                 <ul class="tabs">
                     <li class="tab active" data-tab="tab22">Dados da Carga</li>
@@ -629,9 +631,9 @@
 
     <div id="tab3" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - Produtos </h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span> - Produtos </h2><br><br>
             <div class="outer-wrapper" align="center">
                 <div class="table-wrapper">
                     <table>
@@ -817,6 +819,8 @@
             <div align="center">
                 <input width="8" type="button" class="btn-realistic" value="  Exporta dados   "
                     onclick="loadContent('Invoice_item.html')" style="margin-right: 5px;" />
+                <input width="8" type="button" class="btn-realnovo" value="  Novo produto   "
+                    onclick="loadContent('Duimp_item_det.html')" style="margin-right: 5px;" />
 
             </div>
         </div>
@@ -825,9 +829,9 @@
 
     <div id="tab4" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - Resumo Tributação </h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span> - Resumo Tributação </h2><br><br>
             <div class="card">
 
                 <div class="card-header" align="left">
@@ -866,15 +870,55 @@
                     </fieldset>
                 </div>
             </div>
+            <div class="tab-container">
+                <ul class="tabs">
+                    <li class="tab active" data-tab="tab44">Tributos Federais</li>
+                    <li class="tab" data-tab="tab45">Tributos Estaduais</li>
+                </ul>
+
+                <div id="tab44" class="tab-content active">
+                    <h2 align="center">Tributos Federais</h2>
+                    <div class="card">
+
+                        <div class="card-header" align="left">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab45" class="tab-content active">
+                    <h2 align="center">Tributos Estaduais</h2>
+                    <div class="tab-container">
+                        <ul class="tabs">
+                            <li class="tab active" data-tab="tab451">Documentos Anexados</li>
+                            <li class="tab" data-tab="tab452">Guias de Pagto</li>
+                        </ul>
+
+                        <div id="tab451" class="tab-content active">
+                            <h2 align="center">Documentos</h2>
+                            <div class="card">
+
+                                <div class="card-header" align="left">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab452" class="tab-content active">
+                            <h2 align="center">Guis de Pagto</h2>
+                            <div class="card">
+
+                                <div class="card-header" align="left">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div id="tab5" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - Tratamento Administrativo </h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span> - Tratamento Administrativo </h2><br><br>
             <div class="card">
 
                 <div class="card-header" align="left">
@@ -918,9 +962,9 @@
     </div>
     <div id="tab6" class="tab-content">
         <div>
-            <h2 align="left" >Embarque: <span class="processo">EMB-0001</span>  
-                                  Desembaraço: <span class="processo">EMB-0001</span> 
-                                  DUIMP: <span class="processo">DUIMP-0001</span> - Processos Envolvidos </h2><br><br>
+            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span> - Processos Envolvidos </h2><br><br>
             <div class="card">
 
                 <div class="card-header" align="left">

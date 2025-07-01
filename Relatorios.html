@@ -171,90 +171,38 @@ th, td {
 </head>
 <body>
     <div class="tab-container">
-        <ul class="tabs">
-            <li class="tab active" data-tab="tab3"  onclick="loadJsonData('EMBARQUE','INVOICE','ITEM')">Detalhe item</li>
-        </ul>
-
-        <div class="conteudo-dinamico" id="conteudoJson">
-            <!-- Os parágrafos serão inseridos aqui via JavaScript -->
-            <p>Carregando conteúdo...</p>
-        </div>
-       
-
-        <div id="tab3" class="tab-content active">
-            <h1 align="center">Detalhe do item... do Desembaraço ...</h1>
-            <div>
-                
+       <div>
+                <h2>Filtro de busca</h2>
                 <div class="card">
                     
+                   
                     <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon" align="left">CAMPO-1</label>
-                            <input style="font-size:130%;color:black" id="cpfcnpjraiz" name="cpfcnpjraiz" class="row-content" type="text"  >
+                        
+                        <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">REF. EMBARQUE</label>
+                            <div class="periodo-inputs">
+                                <input width="50%" type="button" class="btn-busca" value="Busca"  onclick="goToJanela('pre_embarque.html','busca_processo.html')" style="margin-right: 5px;"/>
+                                <input id="ref_pre_emb" name="ref_pre_emb" class="periodo-input" type="text">
+                            </div>
                         </fieldset>
-                        <fieldset>
-                            <label id="labelncm" for="ncm" style="font-size:100%;color:maroon" align="left">CAMPO-2</label>
-                            <input style="font-size: 130%; color: black" id="ncm" name="ncm" class="row-content" type="text"  >
+
+                       <fieldset class="periodo-fieldset">
+                            <label id="labelPeriodo" for="dataInicio" class="periodo-label">PERÍODO de / até</label>
+                            <div class="periodo-inputs">
+                                <input id="dataInicio" name="dataInicio" class="periodo-input" type="date">
+                                <input id="dataFim" name="dataFim" class="periodo-input" type="date">
+                            </div>
                         </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelcodigointerno" for="codigointerno" style="font-size:100%;color:maroon" align="left">CAMPO-3</label>
-                            <input style="font-size: 130%; color: black" id="codigointerno" name="codigointerno" class="row-content" type="text" >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelidcomex" for="idcomex" style="font-size:100%;color:maroon" align="left">CAMPO-4</label>
-                            <input style="font-size: 130%; color: black" id="idcomex" name="idcomex" class="row-content" type="text" >
-                        </fieldset>
+
                     </div>
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-5</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-6</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    </div>
-                    <div class="card-header" align="left">
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-7</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-8</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    
-                        <fieldset>
-                            <label id="labelsituacao" for="situacao" style="font-size:100%;color:maroon" align="left">CAMPO-9</label>
-                            <input style="font-size: 130%; color: black" id="situacao" name="situacao" class="row-content" type="text"  >
-                        </fieldset>
-                        <fieldset>
-                            <label id="labelmodalidade" for="modalidade" style="font-size:100%;color:maroon" align="left">CAMPO-10</label>
-                            <input style="font-size: 130%; color: black" id="modalidade" name="modalidade" class="row-content" type="text" >
-                        </fieldset>
-                    </div>
+                         
                     
                 </div>
                 <div align="center">
-                    
-                    <input width="8" type="button" class="btn-realistic" value="Salvar" onclick="callAtributo()"  style="margin-right: 15px;"/>
-                    <input width="8" type="button" class="btn-realistic" value="Exportar dados" onclick="callAtributo()"  style="margin-right: 15px;"/>
-                    <input width="8" type="button" class="btn-realnovo" value="Novo " onclick="callAtributo()"  style="margin-right: 15px;"/>
+                    <input width="8" type="button" class="btn-realistic" value="Consultar" onclick="callAtributo()" style="margin-right: 5px;" />
+                    <input width="8" type="button" class="btn-realistic" value="Limpar filtro" onclick="callAtributo()" style="margin-right: 5px;"/>
                 </div>
-            </div>  
-        </div>
-             
+            </div>
     </div>
 
     <script>
