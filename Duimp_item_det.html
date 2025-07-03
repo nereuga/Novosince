@@ -196,7 +196,7 @@
     </div>
     <div class="tab-container">
         <ul class="tabs">
-            <li class="tab active" data-tab="tab1">Atributos Técnicos</li>
+            <li class="tab active" data-tab="tab1">Dados dos itens</li>
             <li class="tab" data-tab="tab2">Cambial</li>
             <li class="tab" data-tab="tab3">Orgãos Anuentes </li>
             <li class="tab" data-tab="tab4">Op. Estrangeiro </li>
@@ -206,10 +206,15 @@
             <!-- Os parágrafos serão inseridos aqui via JavaScript -->
             <p>Carregando conteúdo...</p>
         </div>
+        <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
+                Desembaraço: <span class="processo">EMB-0001</span>
+                DUIMP: <span class="processo">DUIMP-0001</span>
+                Produto: <span class="processo">PROD-0001</span></h2><br><br>
 
         <div>
+            <h2 align="left">Dados do Ítem</h2><br><br>
             <div class="card">
-
+                
                 <div class="card-header" align="left">
                     <fieldset>
                         <label id="labelcpfcnpjraiz" for="cpfcnpjraiz" style="font-size:100%;color:maroon"
@@ -259,22 +264,24 @@
             </div>
 
         </div>
+        <div align="center">
+            <input width="8" type="button" class="btn-realistic" value="Visualisar Detalhes do Item" onclick="loadContent('Duimp_produto_det.html')"
+            style="margin-right: 5px;" />
+        </div><br><br>
+    </div>
 
     </div>
 
 
     <div id="tab1" class="tab-content active">
         <div>
-            <h2 align="left">Embarque: <span class="processo">EMB-0001</span>
-                Desembaraço: <span class="processo">EMB-0001</span>
-                DUIMP: <span class="processo">DUIMP-0001</span>
-                Produto: <span class="processo">PROD-0001</span> - Atributos técnicos</h2><br><br>
+            <h2 align="left">Tabela de Atributos Técnicos</h2><br><br>
             <div class="outer-wrapper" align="center">
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th align="center" bgcolor="Grey">EDITAR</th>
+                                <!-- <th align="center" bgcolor="Grey">EDITAR</th>-->
                                 <th align="center" bgcolor="Grey">NCM</th>
                                 <th align="center" bgcolor="Grey">CODIGO ATRIBUTO</th>
                                 <th align="center" bgcolor="Grey">NOME ATRIBUTO</th>
@@ -285,10 +292,10 @@
                         </thead>
                         <tbody>
                             <tr class="table-info" style="height:25px;">
-                                <td class="list-inline-item">
+                                <!-- <td class="list-inline-item">
                                     <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
-                                            class="fa fa-edit"></i></button>
+                                            class="fa fa-edit"></i></button>-->
                                 </td>
                                 <td align="center" bgcolor="WhiteSmoke" scope="col">
                                     <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
@@ -309,10 +316,10 @@
 
                             </tr>
                             <tr class="table-info" style="height:25px;">
-                                <td class="list-inline-item">
+                                <!-- <td class="list-inline-item">
                                     <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
-                                            class="fa fa-edit"></i></button>
+                                            class="fa fa-edit"></i></button>-->
                                 </td>
                                 <td align="center" bgcolor="WhiteSmoke" scope="col">
                                     <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
@@ -332,10 +339,10 @@
 
                             </tr>
                             <tr class="table-info" style="height:25px;">
-                                <td class="list-inline-item">
+                                <!-- <td class="list-inline-item">
                                     <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
-                                            class="fa fa-edit"></i></button>
+                                            class="fa fa-edit"></i></button>-->
                                 </td>
                                 <td align="center" bgcolor="WhiteSmoke" scope="col">
                                     <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
@@ -355,10 +362,10 @@
 
                             </tr>
                             <tr class="table-info" style="height:25px;">
-                                <td class="list-inline-item">
+                                <!-- <td class="list-inline-item">
                                     <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
-                                            class="fa fa-edit"></i></button>
+                                            class="fa fa-edit"></i></button>-->
                                 </td>
                                 <td align="center" bgcolor="WhiteSmoke" scope="col">
                                     <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>
@@ -379,10 +386,10 @@
 
                             </tr>
                             <tr class="table-info" style="height:25px;">
-                                <td class="list-inline-item">
+                                <!-- <td class="list-inline-item">
                                     <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Edit" onclick="loadContent('Invoice_item.html')"><i
-                                            class="fa fa-edit"></i></button>
+                                            class="fa fa-edit"></i></button>-->
                                 </td>
                                 <td align="center" bgcolor="WhiteSmoke" scope="col">
                                     <div style="width: 100px;" id="codigosiscomex">4048.40.00</div>

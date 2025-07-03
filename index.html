@@ -21,9 +21,9 @@
                     <li>
                         <span class="menu-item" onclick="toggleSubMenu(this)">Fases Aduaneiras...</span>
                         <ul class="submenu">
-                            <li>
+                            <!--<li>
                                 <span class="submenu-item" onclick="loadContent('pre_embarque.html')">Pre-Embarque...</span>
-                            </li>
+                            </li>-->
                             <li>
                                 <span class="submenu-item"  onclick="loadContent('Embarque.html')">Embarque...</span>
                                 <ul class="submenu">
@@ -35,10 +35,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <span class="submenu-item"  onclick="loadContent('Invoice.html')">Invoice I.A...</span>
-                            </li>
-                             <li>
-                                <span class="submenu-item"  onclick="loadContent('Carga_IA.html')">Carga I.A...</span>
+                                <span class="submenu-item"  onclick="loadContent('Invoice.html')">Invoice...</span>
                             </li>
                             <li>
                                 <span class="submenu-item" onclick="loadContent('Desembaraco.html')">Desembaraço...</span>
@@ -67,6 +64,13 @@
                         <ul class="submenu">
                             <li><a href="#" onclick="loadContent('Financeiro.html')">Processo Financeiro</a></li>
                        </ul>
+                    </li>
+                     <li>
+                        <span class="menu-item" onclick="toggleSubMenu(this)">I.A...</span>
+                        <ul class="submenu">
+                            <li><a href="#" onclick="loadContent('Invoice.html')">Ivoice</a></li>
+                            <li><a href="#" onclick="loadContent('Carga.html')">Carga</a></li>
+                        </ul>
                     </li>
                     <li>
                         <span class="menu-item" onclick="loadContent('Consulta-1.html')">Relatórios e Estatísticas..</span>
